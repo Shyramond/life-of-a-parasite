@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd6nv5sb8y4l4"]
+
+[ext_resource type="Script" path="res://snail/snail_body.gd" id="1_nu36u"]
+[ext_resource type="Script" path="res://snail/dec_proc.gd" id="2_53rv8"]
+
+[node name="Snail" type="Node2D"]
+script = ExtResource("1_nu36u")
+
+[node name="body" type="Line2D" parent="."]
+script = ExtResource("2_53rv8")
+
+[node name="decor" type="Node2D" parent="."]
+
+[node name="tents" type="Node2D" parent="decor"]
+
+[node name="tent_l" type="Line2D" parent="decor/tents"]
+
+[node name="tent_r" type="Line2D" parent="decor/tents"]
+
+[node name="shell" type="Node2D" parent="decor"]
