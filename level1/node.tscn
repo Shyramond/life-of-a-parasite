@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b47nxtvjv1gor"]
+
+[ext_resource type="PackedScene" uid="uid://cyxfrfi2vhyoe" path="res://river.tscn" id="1_112p8"]
+[ext_resource type="Script" uid="uid://bb2fg0t1rwa2d" path="res://ends.gd" id="1_bss38"]
+[ext_resource type="Script" uid="uid://busk7jji54i8e" path="res://node.gd" id="2_112p8"]
+[ext_resource type="Script" uid="uid://bnwxlkpdgnxst" path="res://label2.gd" id="4_bss38"]
+[ext_resource type="PackedScene" uid="uid://jb42v7cfvadi" path="res://character_body_2d.tscn" id="4_e2u21"]
+
+[node name="Node" type="Node" unique_id=1754052362]
+
+[node name="River" parent="." unique_id=1315066199 instance=ExtResource("1_112p8")]
+
+[node name="Sun" type="Node" parent="." unique_id=1042279612]
+script = ExtResource("2_112p8")
+
+[node name="Ends" type="Node" parent="." unique_id=69494018]
+script = ExtResource("1_bss38")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232837930]
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=1854008985]
+wait_time = 45.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Timer" unique_id=243999789]
+offset_left = 11.0
+offset_top = 21.0
+offset_right = 140.0
+offset_bottom = 77.0
+script = ExtResource("4_bss38")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2090626569]
+offset_left = 469.0
+offset_top = 494.0
+offset_right = 710.0
+offset_bottom = 580.0
+
+[node name="CharacterBody2D" parent="." unique_id=860466096 instance=ExtResource("4_e2u21")]
+position = Vector2(31, 330)
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="CharacterBody2D" method="_on_timer_timeout"]

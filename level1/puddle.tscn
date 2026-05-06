@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c8xasy3veo52j"]
+
+[ext_resource type="Script" uid="uid://bkknnws6o0434" path="res://puddle.gd" id="1_3jn3q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75q5n"]
+radius = 107.07474
+
+[node name="Area2D" type="Area2D" unique_id=1077665967]
+script = ExtResource("1_3jn3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1647873438]
+shape = SubResource("CircleShape2D_75q5n")

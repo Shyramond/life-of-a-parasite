@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://co1y1cmqs2ayk"]
+
+[ext_resource type="Script" uid="uid://cbw108ck3260t" path="res://end.gd" id="1_v8s3m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bss38"]
+radius = 89.140335
+
+[node name="Area2D" type="Area2D" unique_id=281808410]
+script = ExtResource("1_v8s3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353774594]
+position = Vector2(8474, 874)
+shape = SubResource("CircleShape2D_bss38")
+
+[node name="Label" type="Label" parent="." unique_id=1027135859]
+offset_left = 7838.0
+offset_top = 633.0
+offset_right = 7931.0
+offset_bottom = 666.0
+metadata/_edit_use_anchors_ = true
