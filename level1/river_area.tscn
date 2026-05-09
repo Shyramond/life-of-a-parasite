@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://c2vnxwr6dsj5o"]
-
-[ext_resource type="Script" uid="uid://lqnh7opdmdfl" path="res://river_area.gd" id="1_em3l7"]
-
-[node name="Area2D" type="Area2D" unique_id=759977183]
-script = ExtResource("1_em3l7")
