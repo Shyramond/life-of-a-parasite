@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bl2rvheqnt7sg"]
+
+[ext_resource type="Script" uid="uid://di1r5hovkp5or" path="res://ui/timer_label.gd" id="1_nb4k0"]
+[ext_resource type="Script" uid="uid://dv8quqje53xkr" path="res://ui/death_message.gd" id="2_ks8t7"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=100251336]
+process_mode = 3
+
+[node name="Menu" type="Button" parent="." unique_id=2116780879]
+process_mode = 3
+offset_right = 72.0
+offset_bottom = 33.0
+text = "Меню"
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="." unique_id=322704414]
+wait_time = 70.0
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="Timer" unique_id=1135683506]
+offset_left = 1.0
+offset_top = 34.0
+offset_right = 58.0
+offset_bottom = 57.0
+script = ExtResource("1_nb4k0")
+
+[node name="Deaths" type="Label" parent="." unique_id=1925206663]
+offset_left = 1.0
+offset_top = 59.0
+offset_right = 52.0
+offset_bottom = 82.0
+text = "0"
+
+[node name="DeathMessage" type="Label" parent="." unique_id=1910592810]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.5
+offset_top = -39.0
+offset_right = 108.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+horizontal_alignment = 1
+script = ExtResource("2_ks8t7")

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b47nxtvjv1gor"]
+
+[ext_resource type="PackedScene" uid="uid://cyxfrfi2vhyoe" path="res://level1/river.tscn" id="1_112p8"]
+[ext_resource type="Script" uid="uid://bb2fg0t1rwa2d" path="res://level1/ends.gd" id="1_bss38"]
+[ext_resource type="Script" uid="uid://busk7jji54i8e" path="res://level1/node.gd" id="2_112p8"]
+[ext_resource type="Script" uid="uid://bnwxlkpdgnxst" path="res://level1/label2.gd" id="4_bss38"]
+[ext_resource type="PackedScene" uid="uid://jb42v7cfvadi" path="res://level1/character_body_2d.tscn" id="4_e2u21"]
+[ext_resource type="Script" uid="uid://cd1exugsbflem" path="res://level1/background.gd" id="5_tda05"]
+
+[node name="Node" type="Node" unique_id=1754052362]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=745850694]
+offset_left = -635.0
+offset_top = -1211.0
+offset_right = 9381.0
+offset_bottom = 2604.0
+color = Color(0.7, 0.3, 0, 1)
+
+[node name="River" parent="." unique_id=1315066199 instance=ExtResource("1_112p8")]
+
+[node name="Sun" type="Node" parent="." unique_id=1042279612]
+script = ExtResource("2_112p8")
+
+[node name="Ends" type="Node" parent="." unique_id=69494018]
+script = ExtResource("1_bss38")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232837930]
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=1854008985]
+wait_time = 50.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Timer" unique_id=243999789]
+offset_left = 11.0
+offset_top = 21.0
+offset_right = 140.0
+offset_bottom = 77.0
+script = ExtResource("4_bss38")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2090626569]
+offset_left = 469.0
+offset_top = 494.0
+offset_right = 710.0
+offset_bottom = 580.0
+
+[node name="Background" type="Node" parent="." unique_id=1047979884]
+script = ExtResource("5_tda05")
+
+[node name="Polygon2D" type="Polygon2D" parent="Background" unique_id=615885173]
+polygon = PackedVector2Array(-79, 412, 184, 394, 574, 683, 1000, 641, 1354, 687, 1878, 1022, 2500, 856, 2841, 897, 3865, 1323, 4620, 896, 7067, 1392, 7557, 681, 7945, 674, 8488, 1003, 8467, 2071, -33, 2025)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Background" unique_id=403873699]
+polygon = PackedVector2Array(-87, 252, 224, 237, 407, -169, 625, -85, 1620, -331, 4835, -23, 5221, -232, 7327, 564, 7464, 413, 7940, 392, 8485, 107, 8484, -1090, -106, -1120)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Background" unique_id=26634842]
+polygon = PackedVector2Array(1879, 5, 1974, -34, 2123, -4, 2111, -71, 1939, -77)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Background" unique_id=1793487286]
+polygon = PackedVector2Array(4206, 543, 4299, 543, 4366, 505, 4410, 591, 4232, 630)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Background" unique_id=1207172263]
+polygon = PackedVector2Array(2708, 647, 2838, 664, 2955, 700, 2963, 592, 2724, 557)
+
+[node name="CharacterBody2D" parent="." unique_id=860466096 instance=ExtResource("4_e2u21")]
+position = Vector2(31, 330)
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="CharacterBody2D" method="_on_timer_timeout"]

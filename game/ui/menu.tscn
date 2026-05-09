@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cflj0ollrfgsc"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=247644503]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1811336211]
+offset_right = 1169.0
+offset_bottom = 654.0
+color = Color(0.5647059, 0.5647059, 0.5647059, 0.5764706)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1007457490]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -109.0
+offset_right = 150.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=934715073]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+size_flags_stretch_ratio = 10.26
+text = "Resume"
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=465186233]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Restart"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1057364371]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Main Menu"
