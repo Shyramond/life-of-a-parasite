@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bd6nv5sb8y4l4"]
+
+[ext_resource type="Script" uid="uid://dg3xw1qaglv8s" path="res://snail/snail_body.gd" id="1_nu36u"]
+[ext_resource type="Script" uid="uid://c1rpfylaa5t0d" path="res://snail/dec_proc.gd" id="2_53rv8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8utro"]
+radius = 31.06445
+
+[node name="Snail" type="Node2D" unique_id=1674894937]
+script = ExtResource("1_nu36u")
+
+[node name="body" type="Line2D" parent="." unique_id=1847121709]
+script = ExtResource("2_53rv8")
+
+[node name="decor" type="Node2D" parent="." unique_id=287915428]
+
+[node name="tents" type="Node2D" parent="decor" unique_id=866182331]
+
+[node name="tent_l" type="Line2D" parent="decor/tents" unique_id=1396430015]
+
+[node name="tent_r" type="Line2D" parent="decor/tents" unique_id=1640204719]
+
+[node name="shell" type="Node2D" parent="decor" unique_id=982917998]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=577916584]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1522130007]
+shape = SubResource("CircleShape2D_8utro")

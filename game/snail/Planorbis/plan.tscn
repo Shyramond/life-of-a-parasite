@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://d1iaj0ww2lpgn"]
+
+[ext_resource type="PackedScene" uid="uid://bd6nv5sb8y4l4" path="res://snail/Snail.tscn" id="1_nibd5"]
+[ext_resource type="Script" uid="uid://ds7h64260b6ga" path="res://snail/Planorbis/plan_body.gd" id="2_5wwhd"]
+[ext_resource type="Texture2D" uid="uid://dulnsccsnulu1" path="res://snail/Planorbis/3233f-planorbis_planorbis-scaled1000.jpg" id="2_oartu"]
+
+[sub_resource type="Curve" id="Curve_dqtyx"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0611702, 0.439425), 2.25832, 2.25832, 0, 0, Vector2(0.577128, 1), 0.0, 0.0, 0, 0, Vector2(0.840426, 0.759754), -1.35113, -1.35113, 0, 0, Vector2(0.976064, 0.312628), -4.33414, -4.33414, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_joys5"]
+_data = [Vector2(0, 0.406057), 0.0, -0.467824, 0, 0, Vector2(0.944149, 0.111881), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.328653, 0.0, 0, 0]
+point_count = 3
+
+[node name="Snail" unique_id=700525171 instance=ExtResource("1_nibd5")]
+scale = Vector2(0.5, 0.5)
+radius = 5
+vel = 100
+
+[node name="body" parent="." index="0" unique_id=1847121709]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 80.0
+width_curve = SubResource("Curve_dqtyx")
+default_color = Color(0.765625, 0.521344, 0.00299072, 1)
+script = ExtResource("2_5wwhd")
+
+[node name="tent_l" parent="decor/tents" parent_id_path=PackedInt32Array(866182331) index="0" unique_id=1396430015]
+width = 30.0
+width_curve = SubResource("Curve_joys5")
+default_color = Color(0.765625, 0.521344, 0.00299072, 1)
+
+[node name="tent_r" parent="decor/tents" parent_id_path=PackedInt32Array(866182331) index="1" unique_id=1640204719]
+width = 30.0
+width_curve = SubResource("Curve_joys5")
+default_color = Color(0.765625, 0.521344, 0.00299072, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="decor/shell" parent_id_path=PackedInt32Array(982917998) index="0" unique_id=555368206]
+position = Vector2(0, 25)
+color = Color(0.894531, 0.749574, 0.580048, 1)
+polygon = PackedVector2Array(24, -39, -14, -27, -31, -15, -38, 1, -32, 11, -31, 21, -23, 44, 10, 84, 29, 98, 72, 111, 111, 109, 153, 90, 184, 53, 192, 23, 192, -12, 178, -46, 150, -74, 113, -86, 76, -83, 54, -72, 33, -52)
+
+[node name="Polygon2D2" type="Polygon2D" parent="decor/shell" parent_id_path=PackedInt32Array(982917998) index="1" unique_id=1923627785]
+position = Vector2(-3, 25)
+color = Color(0.726563, 0.557804, 0.360443, 1)
+polygon = PackedVector2Array(26, -40, 19, -5, 26, 25, 48, 54, 87, 68, 123, 61, 146, 37, 154, -1, 141, -34, 102, -46, 71, -31, 58, -7, 60, 12, 76, 29, 101, 30, 117, 13, 113, -8, 95, -13, 87, 1, 98, 9, 94, 0, 101, -5, 108, 1, 106, 13, 96, 21, 78, 18, 68, 4, 74, -13, 90, -25, 111, -29, 132, -17, 133, 11, 124, 34, 96, 47, 59, 35, 41, 2, 47, -28, 56, -55, 88, -78, 114, -85, 80, -84, 50, -70, 33, -51)
+
+[node name="3233f-planorbisPlanorbis-scaled1000" type="Sprite2D" parent="decor" parent_id_path=PackedInt32Array(287915428) index="2" unique_id=2065500227]
+visible = false
+position = Vector2(54, 13)
+rotation = -1.57079
+scale = Vector2(0.374464, 0.374464)
+texture = ExtResource("2_oartu")
+
+[node name="Label" type="Label" parent="Area2D" parent_id_path=PackedInt32Array(577916584) index="1" unique_id=962038169]
+offset_left = -56.0
+offset_top = -78.0
+offset_right = 57.0
+offset_bottom = -43.0
+theme_override_font_sizes/font_size = 25
+text = "Planorbis"

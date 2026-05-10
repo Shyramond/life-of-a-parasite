@@ -1,15 +1,15 @@
 extends Node2D
 
+signal death(reason)
+signal level_complete
+
 @onready var spine = $spine
 @export var radius: int
 @export var vel: int
 
-var health = 100
-
 func _ready():
 	for i in range(spine.points.size()):
 		spine.points[i] = Vector2(i * radius, 200.0)
-
 
 func get_dir():
 	var move = Vector2(
@@ -33,3 +33,9 @@ func _physics_process(delta):
 	
 	get_node("Area2D").position = pts[pts.size() / 2]
 	get_node("Area2D/CollisionShape2D").rotation = -(pts[pts.size() * 2 / 3] - pts[pts.size() / 3]).angle_to(Vector2(0, 1))
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_node("..").name == "Bith":
+		level_complete.emit()
+	else:
+		death.emit("snail")

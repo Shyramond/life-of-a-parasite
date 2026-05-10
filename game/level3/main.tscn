@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d4ekggbje5dua"]
+
+[ext_resource type="Script" uid="uid://d0y418t5ejglj" path="res://level3/main.gd" id="1_0vwka"]
+[ext_resource type="PackedScene" uid="uid://wbo887pkxbga" path="res://level3/character_body_2d.tscn" id="2_ah7jn"]
+
+[sub_resource type="Curve2D" id="Curve2D_jmcrw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 1153, 2, 0, 0, 0, 0, 1148, 647, 0, 0, 0, 0, 2, 650, 0, 0, 0, 0, 3, 2)
+}
+point_count = 5
+
+[node name="Node" type="Node" unique_id=1477475196]
+script = ExtResource("1_0vwka")
+
+[node name="Player" parent="." unique_id=78427286 instance=ExtResource("2_ah7jn")]
+position = Vector2(550, 300)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2097430652]
+curve = SubResource("Curve2D_jmcrw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=436812741]
+position = Vector2(3, 2)
+
+[node name="CellTimer" type="Timer" parent="." unique_id=1798218118]
+autostart = true
+
+[node name="Cells" type="Node" parent="." unique_id=1140283951]
+
+[node name="StageTimer" type="Timer" parent="." unique_id=154548479]
+wait_time = 20.0
+autostart = true
+
+[connection signal="timeout" from="CellTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StageTimer" to="." method="_on_stage_timer_timeout"]

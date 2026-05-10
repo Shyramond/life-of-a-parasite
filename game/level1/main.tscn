@@ -3,9 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cyxfrfi2vhyoe" path="res://level1/river.tscn" id="1_112p8"]
 [ext_resource type="Script" uid="uid://bb2fg0t1rwa2d" path="res://level1/ends.gd" id="1_bss38"]
 [ext_resource type="Script" uid="uid://busk7jji54i8e" path="res://level1/node.gd" id="2_112p8"]
-[ext_resource type="PackedScene" uid="uid://cef4inony6udp" path="res://OPISTHORCHIS FELINEUS/of-egg.tscn" id="5_onvak"]
+[ext_resource type="PackedScene" uid="uid://dwuesm2vp676c" path="res://level1/of-egg.tscn" id="5_onvak"]
 [ext_resource type="Script" uid="uid://cd1exugsbflem" path="res://level1/background.gd" id="5_tda05"]
-[ext_resource type="Script" uid="uid://cqncsmhgkin4n" path="res://OPISTHORCHIS FELINEUS/of-egg.gd" id="6_qxp3c"]
 
 [node name="Node" type="Node" unique_id=1754052362]
 
@@ -53,8 +52,5 @@ polygon = PackedVector2Array(2545, 631, 2834, 669, 3011, 732, 2963, 592, 2577, 5
 [node name="Ends" type="Node" parent="." unique_id=69494018]
 script = ExtResource("1_bss38")
 
-[node name="Of-egg" parent="." unique_id=1693506226 instance=ExtResource("5_onvak")]
-position = Vector2(21, 217)
-script = ExtResource("6_qxp3c")
-radius = 6
-initial_speed = 140
+[node name="Player" parent="." unique_id=1693506226 instance=ExtResource("5_onvak")]
+position = Vector2(25, 247)

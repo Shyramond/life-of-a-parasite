@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bycvkmqveig3i"]
+
+[ext_resource type="Script" uid="uid://dyqkxy7b5eylg" path="res://level3/path_follow_2d.gd" id="1_ld2yn"]
+[ext_resource type="PackedScene" uid="uid://j2hqm87wye1k" path="res://level3/cell.tscn" id="1_p3cx2"]
+
+[sub_resource type="Curve2D" id="Curve2D_a4auy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, -100, 0, 0, 0, 0, 0, -200, 0, 0, 0, 0, 150, -300, 0, 0, 0, 0, 0, -400, 0, 0, 0, 0, 150, -500, 0, 0, 0, 0, 0, -600, 0, 0, 0, 0, 150, -700, 0, 0, 0, 0, 0, -800, 0, 0, 0, 0, 150, -900, 0, 0, 0, 0, 0, -1000, 0, 0, 0, 0, 150, -1100, 0, 0, 0, 0, 0, -1200, 0, 0, 0, 0, 150, -1300)
+}
+point_count = 14
+
+[node name="Path2D" type="Path2D" unique_id=976070225]
+curve = SubResource("Curve2D_a4auy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1069104688]
+rotation = -0.58800256
+script = ExtResource("1_ld2yn")
+
+[node name="Area2D" parent="PathFollow2D" unique_id=922172468 instance=ExtResource("1_p3cx2")]

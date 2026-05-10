@@ -9,7 +9,7 @@ signal level_complete
 
 const land_damage = 20
 
-var speed = 0
+var speed = 140
 var flow_dir = []
 var flow_speed = []
 var health = 100
@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	var pts = spine.points
 	var dir = get_dir()
 	pts[0] += dir * speed * delta
-	
+
 	for i in range(1, pts.size()):
 		pts[i] = pts[i - 1] + (pts[i] - pts[i - 1]).limit_length(radius)
 	spine.points = pts
@@ -59,50 +59,35 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	for i in range(spine.points.size()):
 		spine.points[i] = Vector2(i * radius, 200.0)
+	
+	var healthbar = preload("res://level1/progress_bar.tscn").instantiate()
+	get_node("Area2D").add_child(healthbar)
 
-	for node in get_node("../River").get_children():
-		if node.name.begins_with("RiverArea"):
-			node.body_entered.connect(area_entered.bind(node.flow_dir, node.flow_speed))
-			node.body_exited.connect(area_exited.bind(node.flow_dir, node.flow_speed))
-	for node in get_node("../Puddles").get_children():
-		if node.name.begins_with("Puddle"):
-			node.body_entered.connect(area_entered.bind(node.flow_dir, node.flow_speed))
-			node.body_exited.connect(area_exited.bind(node.flow_dir, node.flow_speed))
-	for node in get_node("../Sun").get_children():
-		if node.name.begins_with("SunArea"):
-			node.body_entered.connect(sun_area_entered.bind(node.damage))
-			node.body_exited.connect(sun_area_exited)
-	get_node("../Ends/Freshwater").body_entered.connect(end_freshwater)
-	get_node("../Ends/Saltwater").body_entered.connect(end_saltwater)
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name.begins_with("RiverArea") or area.name.begins_with("Puddle"):
+		speed = initial_speed
+		cur_land_damage = 0
+		flow_dir.append(area.flow_dir)
+		flow_speed.append(area.flow_speed)
+	if area.name.begins_with("SunArea"):
+		sun_damage = area.damage
+		sun_count += 1
+	if area.name == "Freshwater":
+		level_complete.emit()
+	if area.name == "Saltwater":
+		death.emit("saltwater")
 
-func area_entered(_body, flow_dir1, flow_speed1):
-	speed = initial_speed
-	cur_land_damage = 0
-	flow_dir.append(flow_dir1)
-	flow_speed.append(flow_speed1)
-
-func area_exited(_body, flow_dir1, flow_speed1):
-	flow_dir.erase(flow_dir1)
-	flow_speed.erase(flow_speed1)
-	if flow_dir.is_empty():
-		speed /= 4
-		cur_land_damage = land_damage
-
-func sun_area_entered(_body, damage):
-	sun_damage = damage
-	sun_count += 1
-
-func sun_area_exited(_body):
-	sun_count -= 1
-	if sun_count == 0:
-		sun_damage = 0
-
-func end_freshwater(_body):
-	level_complete.emit()
-
-func end_saltwater(_body):
-	death.emit("saltwater")
-
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.name.begins_with("RiverArea") or area.name.begins_with("Puddle"):
+		flow_dir.erase(area.flow_dir)
+		flow_speed.erase(area.flow_speed)
+		if flow_dir.is_empty():
+			speed /= 4
+			cur_land_damage = land_damage
+	if area.name.begins_with("SunArea"):
+		sun_count -= 1
+		if sun_count == 0:
+			sun_damage = 0
 
 
 

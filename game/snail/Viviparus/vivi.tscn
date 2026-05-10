@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bfxy3bw0qc3ij"]
+
+[ext_resource type="PackedScene" uid="uid://bd6nv5sb8y4l4" path="res://snail/Snail.tscn" id="1_xngo8"]
+[ext_resource type="Texture2D" uid="uid://dmj2unknjwy4j" path="res://snail/Viviparus/images.jpg" id="2_i0e87"]
+[ext_resource type="Script" uid="uid://c6gcy8n5cgglv" path="res://snail/Viviparus/vivi_body.gd" id="3_u0jqm"]
+
+[sub_resource type="Curve" id="Curve_fjlgc"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0319149, 0.245893), 2.36164, 2.36164, 0, 0, Vector2(0.268617, 0.632957), 0.836413, 0.836413, 0, 0, Vector2(0.526596, 0.833162), 0.0, 0.0, 0, 0, Vector2(0.856383, 0.606263), -1.08734, -1.08734, 0, 0, Vector2(0.981383, 0.325975), -2.15078, -2.15078, 0, 0, Vector2(1, 0), -6.64842, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="Curve" id="Curve_yp33q"]
+_data = [Vector2(0, 0.70396), 0.0, -0.444955, 0, 0, Vector2(1, 0.225873), -0.516608, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_o1frt"]
+_data = [Vector2(0, 0.70396), 0.0, -0.444955, 0, 0, Vector2(1, 0.225873), -0.516608, 0.0, 0, 0]
+point_count = 2
+
+[node name="Snail" unique_id=731812845 instance=ExtResource("1_xngo8")]
+scale = Vector2(0.5, 0.5)
+radius = 9
+vel = 100
+
+[node name="Images" type="Sprite2D" parent="." index="0" unique_id=1521322410]
+visible = false
+position = Vector2(-52, 370)
+rotation = 1.57079
+scale = Vector2(3.54505, 3.54505)
+texture = ExtResource("2_i0e87")
+
+[node name="body" parent="." index="1" unique_id=1847121709]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 180.0
+width_curve = SubResource("Curve_fjlgc")
+default_color = Color(0.765625, 0.521344, 0.00299072, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_u0jqm")
+
+[node name="tent_l" parent="decor/tents" parent_id_path=PackedInt32Array(866182331) index="0" unique_id=1396430015]
+width = 30.0
+width_curve = SubResource("Curve_yp33q")
+default_color = Color(0.765625, 0.521344, 0.00299072, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="tent_r" parent="decor/tents" parent_id_path=PackedInt32Array(866182331) index="1" unique_id=1640204719]
+width = 30.0
+width_curve = SubResource("Curve_o1frt")
+default_color = Color(0.765625, 0.521344, 0.00299072, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Polygon2D4" type="Polygon2D" parent="decor/shell" parent_id_path=PackedInt32Array(982917998) index="0" unique_id=1196341065]
+color = Color(0.894531, 0.749574, 0.580048, 1)
+polygon = PackedVector2Array(210, 58, 220, 57, 234, 74, 224, 88, 213, 89)
+
+[node name="Polygon2D3" type="Polygon2D" parent="decor/shell" parent_id_path=PackedInt32Array(982917998) index="1" unique_id=889666805]
+color = Color(0.726563, 0.557804, 0.360443, 1)
+polygon = PackedVector2Array(184, 33, 193, 26, 208, 37, 218, 76, 216, 101, 207, 108, 193, 103)
+
+[node name="Polygon2D2" type="Polygon2D" parent="decor/shell" parent_id_path=PackedInt32Array(982917998) index="2" unique_id=1508675137]
+color = Color(0.523438, 0.36039, 0.169708, 1)
+polygon = PackedVector2Array(104, -4, 118, -19, 151, -16, 176, 3, 193, 57, 197, 108, 186, 132, 164, 140, 144, 139, 134, 127)
+
+[node name="Polygon2D" type="Polygon2D" parent="decor/shell" parent_id_path=PackedInt32Array(982917998) index="3" unique_id=1632557635]
+color = Color(0.324219, 0.197541, 0.0493927, 1)
+polygon = PackedVector2Array(-34, 60, -56, 48, -73, 17, -66, -24, -30, -59, 17, -76, 78, -60, 107, -37, 140, 132, 132, 156, 103, 173, 61, 175, 23, 156, -7, 113)
+
+[node name="Polygon2D5" type="Polygon2D" parent="decor/shell" parent_id_path=PackedInt32Array(982917998) index="4" unique_id=1615569966]
+color = Color(0.523438, 0.36039, 0.169708, 1)
+polygon = PackedVector2Array(-14, -64, 13, -41, 42, 60, 58, 120, 84, 174, 102, 173, 109, 169, 96, 157, 77, 108, 62, 53, 44, -26, 32, -56, 15, -74, 6, -72, -6, -68)
+
+[node name="Polygon2D6" type="Polygon2D" parent="decor/shell" parent_id_path=PackedInt32Array(982917998) index="5" unique_id=1684309490]
+color = Color(0.726563, 0.557804, 0.360443, 1)
+polygon = PackedVector2Array(133, -17, 147, 4, 159, 60, 164, 122, 163, 140, 166, 141, 174, 136, 173, 100, 166, 41, 157, 1, 147, -16)
+
+[node name="Label" type="Label" parent="Area2D" parent_id_path=PackedInt32Array(577916584) index="1" unique_id=1341088396]
+offset_left = -56.0
+offset_top = -84.0
+offset_right = 56.0
+offset_bottom = -49.0
+theme_override_font_sizes/font_size = 25
+text = "Viviparus"

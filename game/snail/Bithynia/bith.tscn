@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bptsigra4cgtu"]
+
+[ext_resource type="PackedScene" uid="uid://bd6nv5sb8y4l4" path="res://snail/Snail.tscn" id="1_kfcnj"]
+[ext_resource type="Script" uid="uid://o0d20sds2iee" path="res://snail/Bithynia/bith_body.gd" id="3_gidmg"]
+
+[sub_resource type="Curve" id="Curve_k8y5b"]
+_data = [Vector2(0, 0), 0.0, 6.0663, 0, 0, Vector2(0.087766, 0.337129), 0.0, 0.0, 0, 0, Vector2(0.25, 0.478713), 0.0, 0.0, 0, 0, Vector2(0.534574, 0.678218), 0.0, 0.0, 0, 0, Vector2(0.781915, 0.562376), 0.0, 0.0, 0, 0, Vector2(0.920213, 0.478713), -1.5696, -1.5696, 0, 0, Vector2(1, 0), -8.00394, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="Curve" id="Curve_hxvua"]
+_data = [Vector2(0, 0.607426), 0.0, 0.0, 0, 0, Vector2(1, 0.189109), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Snail" unique_id=180727884 instance=ExtResource("1_kfcnj")]
+scale = Vector2(0.5, 0.5)
+radius = 9
+vel = 100
+
+[node name="body" parent="." index="0" unique_id=1847121709]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 180.0
+width_curve = SubResource("Curve_k8y5b")
+default_color = Color(0.764706, 0.521569, 0.00392157, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_gidmg")
+
+[node name="tent_l" parent="decor/tents" parent_id_path=PackedInt32Array(866182331) index="0" unique_id=1396430015]
+width = 23.0
+width_curve = SubResource("Curve_hxvua")
+default_color = Color(0.765625, 0.521344, 0.00299072, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="tent_r" parent="decor/tents" parent_id_path=PackedInt32Array(866182331) index="1" unique_id=1640204719]
+width = 23.0
+width_curve = SubResource("Curve_hxvua")
+default_color = Color(0.765625, 0.521344, 0.00299072, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="shell" parent="decor" parent_id_path=PackedInt32Array(287915428) index="1" unique_id=982917998]
+scale = Vector2(0.9, 0.9)
+
+[node name="Polygon2D4" type="Polygon2D" parent="decor/shell" index="0" unique_id=385756108]
+position = Vector2(22.586, 3.78421)
+color = Color(0.894118, 0.74902, 0.580392, 1)
+polygon = PackedVector2Array(186, 24, 201, 33, 209, 44, 208, 58, 201, 64, 190, 67)
+
+[node name="Polygon2D3" type="Polygon2D" parent="decor/shell" index="1" unique_id=1200543590]
+position = Vector2(22.586, 3.78421)
+color = Color(0.726563, 0.557804, 0.360443, 1)
+polygon = PackedVector2Array(160, 4, 175, 8, 188, 18, 196, 66, 191, 74, 179, 79, 168, 81)
+
+[node name="Polygon2D2" type="Polygon2D" parent="decor/shell" index="2" unique_id=1171331474]
+position = Vector2(22.586, 3.78421)
+color = Color(0.523438, 0.36039, 0.169708, 1)
+polygon = PackedVector2Array(95, -34, 121, -31, 152, -16, 166, 5, 176, 80, 164, 98, 144, 106, 132, 110)
+
+[node name="Polygon2D" type="Polygon2D" parent="decor/shell" index="3" unique_id=66361519]
+position = Vector2(22.586, 3.78421)
+color = Color(0.324219, 0.197541, 0.0493927, 1)
+polygon = PackedVector2Array(-38, -52, 13, -65, 73, -53, 106, -32, 142, 108, 126, 127, 81, 144, 33, 139, -14, 100, -47, 43, -67, 26, -77, -1, -72, -29, -57, -47)
+
+[node name="Label" type="Label" parent="Area2D" parent_id_path=PackedInt32Array(577916584) index="1" unique_id=1135391247]
+offset_left = -50.0
+offset_top = -78.0
+offset_right = 50.0
+offset_bottom = -43.0
+theme_override_font_sizes/font_size = 25
+text = "Bithynia"

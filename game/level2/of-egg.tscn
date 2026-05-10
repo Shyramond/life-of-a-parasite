@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cef4inony6udp"]
+[gd_scene format=3 uid="uid://cg4q26bact1xw"]
 
-[ext_resource type="Script" uid="uid://cmw1c5d5xut5d" path="res://level2/of_egg.gd" id="1_kl355"]
-[ext_resource type="Script" uid="uid://c1djifru0e50j" path="res://OPISTHORCHIS FELINEUS/spine.gd" id="2_j5bwr"]
+[ext_resource type="Script" uid="uid://cmw1c5d5xut5d" path="res://level2/of_egg.gd" id="1_vlu2l"]
+[ext_resource type="Script" uid="uid://c1djifru0e50j" path="res://OPISTHORCHIS FELINEUS/spine.gd" id="2_ogeir"]
 
 [sub_resource type="Curve" id="Curve_248dm"]
 _data = [Vector2(0, 0.010989), 0.0, 7.1917, 0, 0, Vector2(0.142105, 0.659341), 1.79792, 1.79792, 0, 0, Vector2(0.505263, 1), 0.0, 0.0, 0, 0, Vector2(0.926316, 0.505494), -2.58503, -2.58503, 0, 0, Vector2(1, 0.010989), -15.6594, 0.0, 0, 0]
@@ -18,14 +18,14 @@ height = 112.0
 
 [node name="Of-egg" type="Node2D" unique_id=1693506226]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_kl355")
+script = ExtResource("1_vlu2l")
 radius = 6
 vel = 100
 
 [node name="spine" type="Line2D" parent="." unique_id=675372347]
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 width = 0.0
-script = ExtResource("2_j5bwr")
+script = ExtResource("2_ogeir")
 
 [node name="border" type="Line2D" parent="spine" unique_id=735906681]
 width = 95.0
@@ -57,3 +57,5 @@ end_cap_mode = 2
 shape = SubResource("CapsuleShape2D_kl355")
 
 [node name="Camera2D" type="Camera2D" parent="Area2D/CollisionShape2D" unique_id=1671542970]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

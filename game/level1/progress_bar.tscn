@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dx370q31eofo2"]
+
+[ext_resource type="Script" uid="uid://cutjbadpet0bb" path="res://level1/progress_bar.gd" id="1_7e0ck"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7e0ck"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar" unique_id=1183600293]
+offset_left = -47.0
+offset_top = -96.0
+offset_right = 48.0
+offset_bottom = -69.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7e0ck")
+script = ExtResource("1_7e0ck")
