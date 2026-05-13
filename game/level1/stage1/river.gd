@@ -1,7 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	var puddle_scene = preload("res://level1/puddle.tscn")
+	var puddle_scene = preload("puddle.tscn")
 	var area_names = ["RiverArea3", "RiverArea21", "RiverArea30", "RiverArea31"]
 	for i in area_names:
 		if round(randf()):

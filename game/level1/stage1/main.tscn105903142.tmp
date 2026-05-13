@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b47nxtvjv1gor"]
 
-[ext_resource type="PackedScene" uid="uid://cyxfrfi2vhyoe" path="res://level1/river.tscn" id="1_112p8"]
-[ext_resource type="Script" uid="uid://bb2fg0t1rwa2d" path="res://level1/ends.gd" id="1_bss38"]
-[ext_resource type="Script" uid="uid://busk7jji54i8e" path="res://level1/node.gd" id="2_112p8"]
-[ext_resource type="PackedScene" uid="uid://dwuesm2vp676c" path="res://level1/of-egg.tscn" id="5_onvak"]
-[ext_resource type="Script" uid="uid://cd1exugsbflem" path="res://level1/background.gd" id="5_tda05"]
+[ext_resource type="PackedScene" uid="uid://cyxfrfi2vhyoe" path="res://level1/stage1/river.tscn" id="1_112p8"]
+[ext_resource type="Script" uid="uid://bb2fg0t1rwa2d" path="res://level1/stage1/ends.gd" id="1_bss38"]
+[ext_resource type="Script" uid="uid://busk7jji54i8e" path="res://level1/stage1/node.gd" id="2_112p8"]
+[ext_resource type="PackedScene" uid="uid://dwuesm2vp676c" path="res://level1/stage1/of-egg.tscn" id="5_onvak"]
+[ext_resource type="Script" uid="uid://cd1exugsbflem" path="res://level1/stage1/background.gd" id="5_tda05"]
 
 [node name="Node" type="Node" unique_id=1754052362]
 

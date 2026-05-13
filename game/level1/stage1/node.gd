@@ -5,7 +5,7 @@ func get_size(polygon):
 
 func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
-	var scene_load = preload("res://level1/sun.tscn")
+	var scene_load = preload("sun.tscn")
 	var river_areas = get_node("../River").get_children()
 	river_areas = river_areas.filter(func(elem): return elem.name.begins_with("RiverArea") and elem.can_have_sun)
 	var weights = river_areas.map(func(elem): return get_size(elem.find_child("CollisionPolygon2D").polygon))

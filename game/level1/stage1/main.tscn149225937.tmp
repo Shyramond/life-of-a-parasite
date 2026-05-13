@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b47nxtvjv1gor"]
+
+[ext_resource type="PackedScene" uid="uid://cyxfrfi2vhyoe" path="res://level1/stage1/river.tscn" id="1_112p8"]
+[ext_resource type="Script" uid="uid://bb2fg0t1rwa2d" path="res://level1/stage1/ends.gd" id="1_bss38"]
+[ext_resource type="Script" uid="uid://busk7jji54i8e" path="res://level1/stage1/node.gd" id="2_112p8"]
+[ext_resource type="PackedScene" uid="uid://dwuesm2vp676c" path="res://level1/stage1/of-egg.tscn" id="5_onvak"]
+[ext_resource type="Script" uid="uid://cd1exugsbflem" path="res://level1/stage1/background.gd" id="5_tda05"]
+
+[node name="Node" type="Node" unique_id=1754052362]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=745850694]
+offset_left = -635.0
+offset_top = -1211.0
+offset_right = 9381.0
+offset_bottom = 2604.0
+mouse_filter = 2
+color = Color(0.7, 0.3, 0, 1)
+
+[node name="River" parent="." unique_id=1315066199 instance=ExtResource("1_112p8")]
+
+[node name="Sun" type="Node" parent="." unique_id=1042279612]
+script = ExtResource("2_112p8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232837930]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2090626569]
+offset_left = 469.0
+offset_top = 494.0
+offset_right = 710.0
+offset_bottom = 580.0
+
+[node name="Background" type="Node" parent="." unique_id=1047979884]
+script = ExtResource("5_tda05")
+
+[node name="Polygon2D" type="Polygon2D" parent="Background" unique_id=615885173]
+polygon = PackedVector2Array(-519, 454, 184, 398, 574, 683, 1000, 641, 1354, 687, 1880, 1007, 2500, 856, 2841, 897, 3859, 1321, 4620, 896, 7050, 1380, 7557, 681, 7945, 674, 8488, 1003, 8467, 2071, -489, 2056)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Background" unique_id=403873699]
+polygon = PackedVector2Array(-532, 279, 224, 237, 407, -169, 625, -85, 1620, -331, 4835, -23, 5221, -232, 7327, 564, 7471, 419, 7940, 392, 8485, 107, 8484, -1090, -524, -1134)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Background" unique_id=26634842]
+polygon = PackedVector2Array(1844, 32, 1971, -29, 2133, 2, 2111, -71, 1908, -79)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Background" unique_id=1793487286]
+polygon = PackedVector2Array(4192, 539, 4299, 536, 4366, 505, 4410, 591, 4232, 630)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Background" unique_id=1207172263]
+polygon = PackedVector2Array(2545, 631, 2834, 669, 3011, 732, 2963, 592, 2577, 537)
+
+[node name="Puddles" type="Node" parent="." unique_id=216678629]
+
+[node name="Ends" type="Node" parent="." unique_id=69494018]
+script = ExtResource("1_bss38")
+
+[node name="Player" parent="." unique_id=1693506226 instance=ExtResource("5_onvak")]
+position = Vector2(25, 247)
