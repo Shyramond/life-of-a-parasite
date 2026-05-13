@@ -1,7 +1,7 @@
 extends Node2D
 
 func _draw() -> void:
-	draw_circle(Vector2(0, 0), get_node("../CollisionShape2D").shape.radius, Color(0, 0.7, 1))
+	draw_circle(Vector2(0, 0), get_node("../CollisionShape2D").shape.radius, Color("00b4ffff"))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

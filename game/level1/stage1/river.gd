@@ -1,7 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	var puddle_scene = preload("puddle.tscn")
+	var puddle_scene = preload("res://level1/stage1/puddle.tscn")
 	var area_names = ["RiverArea3", "RiverArea21", "RiverArea30", "RiverArea31"]
 	for i in area_names:
 		if round(randf()):
@@ -12,4 +12,7 @@ func _ready() -> void:
 			puddle.name = "Puddle" + str(i)
 			puddle.position = pos
 			get_node(str(i)).free()
-			get_node("../Puddles").add_child(puddle)
+			if i == "RiverArea30":
+				add_child(puddle)
+			else:
+				get_node("../Puddles").add_child(puddle)

@@ -9,10 +9,10 @@ func snail_instantiate(snail1, name1):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var bith = preload("res://snail/Bithynia/bith.tscn")
-	var lym = preload("res://snail/Lymnaea/lym.tscn")
-	var plan = preload("res://snail/Planorbis/plan.tscn")
-	var vivi = preload("res://snail/Viviparus/vivi.tscn")
+	var bith = preload("res://level1/snail/Bithynia/bith.tscn")
+	var lym = preload("res://level1/snail/Lymnaea/lym.tscn")
+	var plan = preload("res://level1/snail/Planorbis/plan.tscn")
+	var vivi = preload("res://level1/snail/Viviparus/vivi.tscn")
 	snail_instantiate(bith, "Bith")
 	var arr = [lym, plan, vivi]
 	for i in range(20):

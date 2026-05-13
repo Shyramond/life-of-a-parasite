@@ -3,7 +3,7 @@ extends Area2D
 signal death(reason)
 signal level_complete
 
-var speed = 100
+var speed = 150
 var stage = 1
 
 # Called when the node enters the scene tree for the first time.

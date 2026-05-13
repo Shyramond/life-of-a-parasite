@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d4ekggbje5dua"]
 
-[ext_resource type="Script" uid="uid://d0y418t5ejglj" path="res://level3/main.gd" id="1_0vwka"]
-[ext_resource type="PackedScene" uid="uid://wbo887pkxbga" path="res://level3/character_body_2d.tscn" id="2_ah7jn"]
+[ext_resource type="Script" uid="uid://d0y418t5ejglj" path="res://level1/stage3/main.gd" id="1_0vwka"]
+[ext_resource type="PackedScene" uid="uid://uwjtcio2vd4t" path="res://level1/stage3/character_body_2d.tscn" id="2_ah7jn"]
 
 [sub_resource type="Curve2D" id="Curve2D_jmcrw"]
 _data = {
@@ -13,7 +13,7 @@ point_count = 5
 script = ExtResource("1_0vwka")
 
 [node name="Player" parent="." unique_id=78427286 instance=ExtResource("2_ah7jn")]
-position = Vector2(550, 300)
+position = Vector2(568, 317)
 
 [node name="Path2D" type="Path2D" parent="." unique_id=2097430652]
 curve = SubResource("Curve2D_jmcrw")

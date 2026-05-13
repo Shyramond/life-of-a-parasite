@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bycvkmqveig3i"]
 
-[ext_resource type="Script" uid="uid://dyqkxy7b5eylg" path="res://level3/path_follow_2d.gd" id="1_ld2yn"]
-[ext_resource type="PackedScene" uid="uid://j2hqm87wye1k" path="res://level3/cell.tscn" id="1_p3cx2"]
+[ext_resource type="Script" uid="uid://dyqkxy7b5eylg" path="res://level1/stage3/path_follow_2d.gd" id="1_ld2yn"]
+[ext_resource type="PackedScene" uid="uid://j2hqm87wye1k" path="res://level1/stage3/cell.tscn" id="1_p3cx2"]
 
 [sub_resource type="Curve2D" id="Curve2D_a4auy"]
 _data = {

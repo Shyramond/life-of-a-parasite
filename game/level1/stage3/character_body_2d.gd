@@ -12,13 +12,13 @@ func _draw() -> void:
 
 func _physics_process(delta: float) -> void:
 	var dir = Vector2.ZERO
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("right"):
 		dir.x += 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		dir.x -= 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("down"):
 		dir.y += 1
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("up"):
 		dir.y -= 1
 	var velocity = dir.normalized() * speed
 	position += velocity * delta

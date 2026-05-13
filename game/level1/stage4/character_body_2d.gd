@@ -8,6 +8,7 @@ func _input(event: InputEvent) -> void:
 		position.y += 60
 	if event.is_action_pressed("up"):
 		position.y -= 60
+	position.y = clamp(position.y, 120, 600)
 
 func _draw() -> void:
 	draw_circle(Vector2(0, 0), get_node("CollisionShape2D").shape.radius, "blue")

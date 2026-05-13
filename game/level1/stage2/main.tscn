@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnt2gfvjqawfq"]
 
-[ext_resource type="Script" uid="uid://c0piaon7u5l0" path="res://level2/snails.gd" id="2_tf5oj"]
-[ext_resource type="PackedScene" uid="uid://cg4q26bact1xw" path="res://level2/of-egg.tscn" id="3_he73a"]
+[ext_resource type="Script" uid="uid://c0piaon7u5l0" path="res://level1/stage2/snails.gd" id="2_tf5oj"]
+[ext_resource type="PackedScene" uid="uid://cg4q26bact1xw" path="res://level1/stage2/of-egg.tscn" id="3_he73a"]
 
 [node name="Node" type="Node" unique_id=2089777196]
 

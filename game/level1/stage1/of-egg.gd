@@ -60,7 +60,7 @@ func _ready() -> void:
 	for i in range(spine.points.size()):
 		spine.points[i] = Vector2(i * radius, 200.0)
 	
-	var healthbar = preload("progress_bar.tscn").instantiate()
+	var healthbar = preload("res://level1/stage1/progress_bar.tscn").instantiate()
 	get_node("Area2D").add_child(healthbar)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

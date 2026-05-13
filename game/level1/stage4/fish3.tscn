@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dxm28cli2kb4x"]
+
+[ext_resource type="Script" uid="uid://dyboxueowqdtk" path="res://level1/stage4/label.gd" id="1_ekiry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g85m7"]
+size = Vector2(212, 39)
+
+[node name="Node" type="Area2D" unique_id=820474812]
+scale = Vector2(0.8, 0.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1758395771]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_g85m7")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=632221190]
+color = Color(0.5882353, 0.6666667, 0.5882353, 1)
+polygon = PackedVector2Array(-26, -12, 25, -12, 59, -10, 84, -4, 90, -1, 105, 3, 107, 6, 103, 9, 62, 17, 11, 19, 1, 19, -40, 18, -51, 15, -57, 11, -63, 10, -72, 10, -78, 12, -81, 3, -75, -7, -70, -5, -56, -5, -43, -10)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1501953670]
+color = Color(0.26666668, 0.27450982, 0.19607843, 1)
+polygon = PackedVector2Array(-80, 0, 93, 0, 84, -4, 59, -10, 25, -12, -26, -12, -43, -10, -56, -5, -70, -5, -75, -7)
+
+[node name="Polygon2D3" type="Polygon2D" parent="." unique_id=1421570069]
+color = Color(0.42352942, 0.36078432, 0, 1)
+polygon = PackedVector2Array(-26, -12, -45, -25, -52, -26, -61, -22, -64, -18, -65, -12, -63, -8, -53, -6, -43, -10)
+
+[node name="Polygon2D4" type="Polygon2D" parent="." unique_id=18769685]
+color = Color(0.42352942, 0.36078432, 0, 1)
+polygon = PackedVector2Array(-78, 12, -95, 19, -103, 20, -105, 15, -98, 0, -103, -8, -105, -15, -104, -19, -94, -17, -75, -7, -81, 3)
+
+[node name="Polygon2D5" type="Polygon2D" parent="." unique_id=983259307]
+color = Color(0.42352942, 0.36078432, 0, 1)
+polygon = PackedVector2Array(-36, 18, -53, 27, -59, 28, -66, 26, -68, 22, -68, 17, -66, 12, -63, 10, -57, 11, -51, 15, -40, 18)
+
+[node name="Polygon2D6" type="Polygon2D" parent="." unique_id=31561353]
+color = Color(0.42352942, 0.36078432, 0, 1)
+polygon = PackedVector2Array(12, 19, -1, 33, -4, 33, -5, 29, -5, 26, -4, 22, 1, 19)
+
+[node name="Polygon2D7" type="Polygon2D" parent="." unique_id=552405095]
+color = Color(0.42352942, 0.36078432, 0, 1)
+polygon = PackedVector2Array(66, 16, 63, 23, 58, 30, 54, 34, 51, 33, 51, 25, 52, 21, 57, 17, 62, 17)
+
+[node name="Polygon2D8" type="Polygon2D" parent="." unique_id=1301279576]
+polygon = PackedVector2Array(82, -4, 83, -3, 83, -1, 82, 0, 80, 0, 79, -1, 79, -3, 80, -4)
+
+[node name="Polygon2D9" type="Polygon2D" parent="." unique_id=2055615693]
+position = Vector2(0, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(80, -2, 80, -1, 81, 0, 82, 0, 83, -1, 83, -2, 82, -3, 81, -3)
+
+[node name="Label" type="Label" parent="." unique_id=68288086]
+offset_left = -173.74998
+offset_top = -18.749998
+offset_right = -104.749985
+offset_bottom = 16.250002
+theme_override_font_sizes/font_size = 25
+text = "Щука"
+script = ExtResource("1_ekiry")

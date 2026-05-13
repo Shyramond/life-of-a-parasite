@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dujjxl2gi2xhi"]
+
+[ext_resource type="Script" uid="uid://jboq07b1j5tj" path="res://level1/stage7/main.gd" id="1_un7e7"]
+[ext_resource type="PackedScene" uid="uid://dkq66kdkf70lh" path="res://level1/stage7/character_body_2d.tscn" id="2_agct0"]
+[ext_resource type="Script" uid="uid://bvdtrd8ctv4j2" path="res://level1/stage7/button.gd" id="3_rs030"]
+
+[sub_resource type="Curve2D" id="Curve2D_un7e7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 1151, -1, 0, 0, 0, 0, 1151, 647, 0, 0, 0, 0, -3, 648, 0, 0, 0, 0, -2, 0)
+}
+point_count = 5
+
+[node name="Node" type="Node" unique_id=1934153131]
+script = ExtResource("1_un7e7")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1994775782]
+curve = SubResource("Curve2D_un7e7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=474689024]
+position = Vector2(-2, 0)
+rotation = -0.0008673025
+
+[node name="Timer" type="Timer" parent="." unique_id=1189694587]
+wait_time = 3.0
+autostart = true
+
+[node name="Player" parent="." unique_id=78427286 instance=ExtResource("2_agct0")]
+position = Vector2(576, 338)
+
+[node name="Timer" type="Timer" parent="Player" unique_id=1165340479]
+wait_time = 2.0
+one_shot = true
+
+[node name="Cells" type="Node" parent="." unique_id=942197077]
+
+[node name="Button" type="Button" parent="." unique_id=1294848264]
+offset_left = 885.0
+offset_top = 78.0
+offset_right = 1032.0
+offset_bottom = 148.0
+text = "a"
+script = ExtResource("3_rs030")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="Player" method="_on_button_pressed"]

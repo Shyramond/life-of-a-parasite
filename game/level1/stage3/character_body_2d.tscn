@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://wbo887pkxbga"]
+[gd_scene format=3 uid="uid://uwjtcio2vd4t"]
 
-[ext_resource type="Script" uid="uid://bkj5pj2wl65rp" path="res://level3/character_body_2d.gd" id="1_xx3th"]
-[ext_resource type="Script" uid="uid://be0ktr4i4kw2v" path="res://level3/label.gd" id="2_ij6vw"]
+[ext_resource type="Script" uid="uid://c6u64m6b1gsme" path="res://level1/stage3/character_body_2d.gd" id="1_xx3th"]
+[ext_resource type="Script" uid="uid://be0ktr4i4kw2v" path="res://level1/stage3/label.gd" id="2_ij6vw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_186t8"]
 radius = 23.021729

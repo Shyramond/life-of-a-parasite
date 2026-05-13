@@ -3,9 +3,9 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var path_load = preload("res://level4/path_2d.tscn")
-	var fish1_load = preload("res://level4/fish1.tscn")
-	var fish2_load = preload("res://level4/fish2.tscn")
+	var path_load = preload("res://level1/stage4/path_2d.tscn")
+	var fish1_load = preload("res://level1/stage4/fish1.tscn")
+	var fish_load = [preload("res://level1/stage4/fish2.tscn"), preload("res://level1/stage4/fish3.tscn")]
 	for i in range(8):
 		var path = path_load.instantiate()
 		path.position.y = 540 - i * 60
@@ -17,8 +17,8 @@ func _ready() -> void:
 	get_node("Path" + str(correct_fish) + "/PathFollow2D").add_child(fish1)
 	for i in range(8):
 		if i != correct_fish:
-			var fish2 = fish2_load.instantiate()
-			get_node("Path" + str(i) + "/PathFollow2D").add_child(fish2)
+			var fish = fish_load.pick_random().instantiate()
+			get_node("Path" + str(i) + "/PathFollow2D").add_child(fish)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -3,21 +3,19 @@ extends Node
 signal death_signal(reason)
 signal level_complete_signal
 
-const level_time = [70, 40, 60, 30, 30]
+const level_time = [70, 40, 60, 30, 30, 40, 60]
 
 var deaths = 0
-var cur_level = 1
+var cur_level = 2
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	main_menu()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func level_load():
-	var level = load("res://level" + str(cur_level) + "/main.tscn").instantiate()
+	var level = load("res://level1/stage" + str(cur_level) + "/main.tscn").instantiate()
 	level.name = "Level"
 	call_deferred("add_child", level)
 	call_deferred("move_child", level, 0)
@@ -78,13 +76,13 @@ func game_load():
 func level_complete():
 	level_complete_signal.emit()
 	get_tree().paused = true
-	if cur_level != 5:
+	if cur_level != 7:
 		await get_tree().create_timer(1.0).timeout
 		cur_level += 1
 		game_load()
 
 func timeout():
-	if cur_level == 3:
+	if cur_level == 3 or cur_level == 7:
 		level_complete()
 	else:
 		death("timeout")

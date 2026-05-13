@@ -23,7 +23,7 @@ func _on_timer_timeout() -> void:
 
 func cell1():
 	get_node("Path2D/PathFollow2D").progress_ratio = randf()
-	var cell = preload("res://level3/cell.tscn").instantiate()
+	var cell = preload("res://level1/stage3/cell.tscn").instantiate()
 	cell.position = get_node("Path2D/PathFollow2D").position
 	cell.speed = randi() % 30 + 100
 	cell.dir = Vector2(0, 1).rotated(get_node("Path2D/PathFollow2D").rotation + randf_range(-PI / 4, PI / 4))
@@ -32,7 +32,7 @@ func cell1():
 
 func cell2():
 	get_node("Path2D/PathFollow2D").progress_ratio = randf()
-	var path = preload("res://level3/path_2d.tscn").instantiate()
+	var path = preload("res://level1/stage3/path_2d.tscn").instantiate()
 	path.position = get_node("Path2D/PathFollow2D").position
 	path.rotation = get_node("Path2D/PathFollow2D").rotation - PI + randf_range(-PI / 4, PI / 4)
 	path.get_node("PathFollow2D/Area2D/VisibleOnScreenNotifier2D").screen_exited.connect(cell_delete.bind(path))
@@ -40,7 +40,7 @@ func cell2():
 
 func cell3():
 	get_node("Path2D/PathFollow2D").progress_ratio = randf()
-	var cell = preload("res://level3/cell.tscn").instantiate()
+	var cell = preload("res://level1/stage3/cell.tscn").instantiate()
 	cell.position = get_node("Path2D/PathFollow2D").position
 	cell.speed = randi() % 30 + 100
 	cell.follow_player = true

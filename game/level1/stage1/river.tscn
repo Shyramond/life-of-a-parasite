@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyxfrfi2vhyoe"]
 
-[ext_resource type="PackedScene" uid="uid://c2vnxwr6dsj5o" path="res://level1/river_area.tscn" id="1_gqjxk"]
-[ext_resource type="Script" uid="uid://bbx3j8bsf8hmv" path="res://level1/river.gd" id="1_iiml5"]
+[ext_resource type="PackedScene" uid="uid://c2vnxwr6dsj5o" path="res://level1/stage1/river_area.tscn" id="1_gqjxk"]
+[ext_resource type="Script" uid="uid://bbx3j8bsf8hmv" path="res://level1/stage1/river.gd" id="1_iiml5"]
 
 [node name="River" type="Node" unique_id=1315066199]
 script = ExtResource("1_iiml5")
@@ -128,7 +128,7 @@ polygon = PackedVector2Array(7478, 462, 8069, 458, 8037, 599, 7506, 620)
 [node name="RiverArea25" parent="." unique_id=635609372 instance=ExtResource("1_gqjxk")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RiverArea25" unique_id=2127811004]
-polygon = PackedVector2Array(4736, 741, 6936, 1200, 7026, 1345, 4585, 836)
+polygon = PackedVector2Array(4736, 741, 6936, 1200, 7026, 1345, 4583, 836)
 
 [node name="RiverArea26" parent="." unique_id=1151888347 instance=ExtResource("1_gqjxk")]
 can_have_sun = false
@@ -150,12 +150,12 @@ polygon = PackedVector2Array(4408, 433, 4654, 614, 4766, 543, 4522, 368)
 [node name="RiverArea29" parent="." unique_id=135067065 instance=ExtResource("1_gqjxk")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RiverArea29" unique_id=2120392259]
-polygon = PackedVector2Array(3858, 1108, 4770, 540, 4877, 654, 3861, 1284)
+polygon = PackedVector2Array(3858, 1108, 4766, 543, 4877, 654, 3861, 1284)
 
 [node name="RiverArea30" parent="." unique_id=857301578 instance=ExtResource("1_gqjxk")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RiverArea30" unique_id=1411851965]
-polygon = PackedVector2Array(4771, 539, 5936, 243, 6099, 305, 4878, 655)
+polygon = PackedVector2Array(4766, 543, 5936, 243, 6099, 305, 4878, 655)
 
 [node name="RiverArea31" parent="." unique_id=2029567189 instance=ExtResource("1_gqjxk")]
 

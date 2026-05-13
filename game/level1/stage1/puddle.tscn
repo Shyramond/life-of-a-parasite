@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8xasy3veo52j"]
 
-[ext_resource type="Script" uid="uid://bkknnws6o0434" path="res://level1/puddle.gd" id="1_3jn3q"]
-[ext_resource type="Script" uid="uid://d1f10bn6rup60" path="res://level1/blue_circle.gd" id="2_5h5e0"]
+[ext_resource type="Script" uid="uid://bkknnws6o0434" path="res://level1/stage1/puddle.gd" id="1_3jn3q"]
+[ext_resource type="Script" uid="uid://d1f10bn6rup60" path="res://level1/stage1/blue_circle.gd" id="2_5h5e0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75q5n"]
 radius = 145.0

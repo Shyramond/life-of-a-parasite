@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwuesm2vp676c"]
 
-[ext_resource type="Script" uid="uid://cqncsmhgkin4n" path="res://level1/of-egg.gd" id="1_ueb2x"]
-[ext_resource type="Script" uid="uid://c1djifru0e50j" path="res://OPISTHORCHIS FELINEUS/spine.gd" id="2_rehr0"]
+[ext_resource type="Script" uid="uid://cqncsmhgkin4n" path="res://level1/stage1/of-egg.gd" id="1_ueb2x"]
+[ext_resource type="Script" uid="uid://c1djifru0e50j" path="res://level1/OPISTHORCHIS FELINEUS/spine.gd" id="2_rehr0"]
 
 [sub_resource type="Curve" id="Curve_248dm"]
 _data = [Vector2(0, 0.010989), 0.0, 7.1917, 0, 0, Vector2(0.142105, 0.659341), 1.79792, 1.79792, 0, 0, Vector2(0.505263, 1), 0.0, 0.0, 0, 0, Vector2(0.926316, 0.505494), -2.58503, -2.58503, 0, 0, Vector2(1, 0.010989), -15.6594, 0.0, 0, 0]
