@@ -14,6 +14,8 @@ text = "Меню"
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="." unique_id=322704414]
+process_mode = 1
+wait_time = 5.0
 one_shot = true
 
 [node name="TimerLabel" type="Label" parent="Timer" unique_id=1135683506]
@@ -36,11 +38,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -108.5
-offset_top = -39.0
-offset_right = 108.5
+offset_left = -484.0
+offset_top = -84.0
+offset_right = 491.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 0
 horizontal_alignment = 1
+autowrap_mode = 2
 script = ExtResource("2_ks8t7")

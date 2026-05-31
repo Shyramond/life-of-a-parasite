@@ -50,7 +50,40 @@ func cell3():
 func cell_delete(cell):
 	cell.queue_free()
 
-
 func _on_stage_timer_timeout() -> void:
-	get_node("Player").speed += 50 * stage
 	stage += 1
+	var color = "green"
+	var player_position = get_node("Player").position
+	var player_health = get_node("Player").health
+	var npc_script = preload("res://level1/stage3/npc.gd")
+	var player = null
+	if stage == 2:
+		get_node("Player").name = "npc"
+		get_node("npc").queue_free()
+		player = get_node("Player2")
+	elif stage == 3:
+		get_node("Player").name = "npc"
+		get_node("npc").set_script(npc_script)
+		get_node("npc/Label").free()
+		get_node("npc").set_process(true)
+		color = "yellow"
+		player = get_node("Player3")
+	else:
+		return
+	player.position = player_position
+	player.color = color
+	player.position = player_position
+	player.name = "Player"
+	player.speed = (stage - 1) * 100
+	player.health = player_health
+	player.process_mode = PROCESS_MODE_INHERIT
+	player.queue_redraw()
+	var scene = load("res://level1/stage3/character_body_2d" + str(stage) + ".tscn")
+	for i in range(10):
+		var npc = scene.instantiate()
+		npc.set_script(npc_script)
+		npc.color = color
+		npc.get_node("Label").queue_free()
+		npc.position = player_position
+		npc.name = "npc" + str(stage) + str(i)
+		add_child(npc)

@@ -1,4 +1,5 @@
 extends Label
 
 func _process(delta: float) -> void:
-	text = str(round(get_node("..").health))
+	if "health" in get_node(".."):
+		text = str(round(get_node("..").health))

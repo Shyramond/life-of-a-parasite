@@ -10,5 +10,5 @@ color = Color(0, 0.7058824, 1, 1)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=489728122]
 closed = true
-width = 70.0
+width = 1.0
 default_color = Color(0, 0.7058824, 1, 1)

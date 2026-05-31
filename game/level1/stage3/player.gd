@@ -1,14 +1,14 @@
 extends Area2D
 
 signal death(reason)
-signal level_complete
 
 var speed = 50
 var health = 100
 @onready var screen_size = get_viewport_rect().size
+var color = "blue"
 
 func _draw() -> void:
-	draw_circle(Vector2(0, 0), get_node("CollisionShape2D").shape.radius, "blue")
+	draw_circle(Vector2(0, 0), get_node("CollisionShape2D").shape.radius, color)
 
 func _physics_process(delta: float) -> void:
 	var dir = Vector2.ZERO
@@ -27,7 +27,8 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	area_entered.connect(hit)
 
-func hit(_body):
-	health -= 10
-	if health <= 0:
-		death.emit("health")
+func hit(body):
+	if !body.name.begins_with("npc"):
+		health -= 20
+		if health <= 0:
+			death.emit("health3" + str(get_node("..").stage))

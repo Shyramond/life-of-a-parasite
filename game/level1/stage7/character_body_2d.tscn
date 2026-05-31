@@ -1,17 +1,19 @@
-[gd_scene format=3 uid="uid://dkq66kdkf70lh"]
+[gd_scene format=3 uid="uid://wbo887pkxbga"]
 
-[ext_resource type="Script" uid="uid://dlwdngar14e1c" path="res://level1/stage7/character_body_2d.gd" id="1_l320k"]
-[ext_resource type="Script" uid="uid://be0ktr4i4kw2v" path="res://level1/stage3/label.gd" id="2_bs0x2"]
-[ext_resource type="Script" uid="uid://d320mum6xxros" path="res://level1/stage7/label_2.gd" id="3_bs0x2"]
+[ext_resource type="Script" uid="uid://bkj5pj2wl65rp" path="res://level1/stage7/character_body_2d.gd" id="1_xx3th"]
+[ext_resource type="Script" uid="uid://cbm11y4nmf811" path="res://level1/stage7/label.gd" id="2_me716"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_me716"]
+radius = 23.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_186t8"]
 radius = 23.021729
 
-[node name="CharacterBody2D" type="Area2D" unique_id=78427286]
-script = ExtResource("1_l320k")
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=413031034]
+script = ExtResource("1_xx3th")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=565218781]
-shape = SubResource("CircleShape2D_186t8")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1818530421]
+shape = SubResource("CircleShape2D_me716")
 
 [node name="Label" type="Label" parent="." unique_id=835834597]
 offset_left = -31.0
@@ -19,11 +21,24 @@ offset_top = -49.0
 offset_right = 31.0
 offset_bottom = -26.0
 horizontal_alignment = 1
-script = ExtResource("2_bs0x2")
+script = ExtResource("2_me716")
 
-[node name="Label2" type="Label" parent="." unique_id=704606506]
-offset_left = -20.0
-offset_top = -72.0
-offset_right = 20.0
-offset_bottom = -49.0
-script = ExtResource("3_bs0x2")
+[node name="Area2D" type="Area2D" parent="." unique_id=1510878182]
+collision_layer = 128
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=565218781]
+shape = SubResource("CircleShape2D_186t8")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1340155951]
+
+[node name="Label2" type="Label" parent="." unique_id=1902313523]
+offset_left = -60.0
+offset_top = 28.0
+offset_right = 62.0
+offset_bottom = 51.0
+text = "Метацеркарий"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

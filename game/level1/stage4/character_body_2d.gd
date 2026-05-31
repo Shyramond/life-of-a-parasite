@@ -24,4 +24,4 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name == "Fish1":
 		level_complete.emit()
 	else:
-		death.emit("health")
+		death.emit("fish")

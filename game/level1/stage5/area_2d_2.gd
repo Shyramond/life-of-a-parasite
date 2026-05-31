@@ -3,7 +3,7 @@ extends Area2D
 signal death(reason)
 signal level_complete
 
-var speed = 150
+var speed = 200
 var stage = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -26,5 +26,6 @@ func _on_button_pressed() -> void:
 			get_node("../../../Area2D/CollisionShape2D").shape.size.x -= 20
 			get_node("../../../Area2D/CollisionShape2D/ColorRect").size.x -= 20
 			get_node("../../../Area2D/CollisionShape2D/ColorRect").position.x += 10
+			get_node("../../../Area2D/CollisionShape2D").position.x = randi() % 300 + 400
 	else:
-		death.emit("health")
+		death.emit("health5")

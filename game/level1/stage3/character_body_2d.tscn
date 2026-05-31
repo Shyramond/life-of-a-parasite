@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://uwjtcio2vd4t"]
 
-[ext_resource type="Script" uid="uid://c6u64m6b1gsme" path="res://level1/stage3/character_body_2d.gd" id="1_xx3th"]
+[ext_resource type="Script" uid="uid://c6u64m6b1gsme" path="res://level1/stage3/player.gd" id="1_xx3th"]
 [ext_resource type="Script" uid="uid://be0ktr4i4kw2v" path="res://level1/stage3/label.gd" id="2_ij6vw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_186t8"]
@@ -19,3 +19,10 @@ offset_right = 31.0
 offset_bottom = -26.0
 horizontal_alignment = 1
 script = ExtResource("2_ij6vw")
+
+[node name="Label2" type="Label" parent="." unique_id=1071295626]
+offset_left = -48.0
+offset_top = 25.0
+offset_right = 49.0
+offset_bottom = 48.0
+text = "Спороциста"

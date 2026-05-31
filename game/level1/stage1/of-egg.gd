@@ -9,7 +9,7 @@ signal level_complete
 
 const land_damage = 20
 
-var speed = 140
+var speed = initial_speed
 var flow_dir = []
 var flow_speed = []
 var health = 100
@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		velocity = flow_dir[flow_dir.size() - 1] * flow_speed[flow_speed.size() - 1]
 	health -= (sun_damage + cur_land_damage) * delta
 	if health <= 0:
-		death.emit("health")
+		death.emit("health1")
 	position += velocity * delta
 	var shape = get_node("Area2D/CollisionShape2D")
 	get_node("Area2D").position = pts[pts.size() / 2]
@@ -59,18 +59,16 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	for i in range(spine.points.size()):
 		spine.points[i] = Vector2(i * radius, 200.0)
-	
-	var healthbar = preload("res://level1/stage1/progress_bar.tscn").instantiate()
-	get_node("Area2D").add_child(healthbar)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name == "Land":
+		speed /= 4
+		cur_land_damage = land_damage
 	if area.name.begins_with("RiverArea") or area.name.begins_with("Puddle"):
-		speed = initial_speed
-		cur_land_damage = 0
 		flow_dir.append(area.flow_dir)
 		flow_speed.append(area.flow_speed)
-	if area.name.begins_with("SunArea"):
-		sun_damage = area.damage
+	if area.name == "Sun":
+		sun_damage = 30
 		sun_count += 1
 	if area.name == "Freshwater":
 		level_complete.emit()
@@ -78,13 +76,13 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		death.emit("saltwater")
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.name == "Land":
+		speed = initial_speed
+		cur_land_damage = 0
 	if area.name.begins_with("RiverArea") or area.name.begins_with("Puddle"):
 		flow_dir.erase(area.flow_dir)
 		flow_speed.erase(area.flow_speed)
-		if flow_dir.is_empty():
-			speed /= 4
-			cur_land_damage = land_damage
-	if area.name.begins_with("SunArea"):
+	if area.name == "Sun":
 		sun_count -= 1
 		if sun_count == 0:
 			sun_damage = 0

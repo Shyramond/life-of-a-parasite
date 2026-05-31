@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqncsmhgkin4n" path="res://level1/stage1/of-egg.gd" id="1_ueb2x"]
 [ext_resource type="Script" uid="uid://c1djifru0e50j" path="res://level1/OPISTHORCHIS FELINEUS/spine.gd" id="2_rehr0"]
+[ext_resource type="Script" uid="uid://cutjbadpet0bb" path="res://level1/stage1/progress_bar.gd" id="3_n1x7h"]
 
 [sub_resource type="Curve" id="Curve_248dm"]
 _data = [Vector2(0, 0.010989), 0.0, 7.1917, 0, 0, Vector2(0.142105, 0.659341), 1.79792, 1.79792, 0, 0, Vector2(0.505263, 1), 0.0, 0.0, 0, 0, Vector2(0.926316, 0.505494), -2.58503, -2.58503, 0, 0, Vector2(1, 0.010989), -15.6594, 0.0, 0, 0]
@@ -15,6 +16,9 @@ point_count = 5
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kl355"]
 radius = 38.0
 height = 112.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1x7h"]
+bg_color = Color(1, 0, 0, 1)
 
 [node name="Of-egg" type="Node2D" unique_id=1693506226]
 scale = Vector2(0.5, 0.5)
@@ -56,6 +60,21 @@ end_cap_mode = 2
 shape = SubResource("CapsuleShape2D_kl355")
 
 [node name="Camera2D" type="Camera2D" parent="Area2D/CollisionShape2D" unique_id=1671542970]
+
+[node name="ProgressBar" type="ProgressBar" parent="Area2D" unique_id=462463306]
+offset_left = -36.0
+offset_top = -92.0
+offset_right = 36.0
+offset_bottom = -65.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_n1x7h")
+script = ExtResource("3_n1x7h")
+
+[node name="Label" type="Label" parent="Area2D" unique_id=2085895799]
+offset_left = -20.0
+offset_top = 58.0
+offset_right = 22.0
+offset_bottom = 81.0
+text = "Яйцо"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
