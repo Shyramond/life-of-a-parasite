@@ -1,0 +1,275 @@
+[gd_scene format=3 uid="uid://b47nxtvjv1gor"]
+
+[ext_resource type="Script" uid="uid://bb2fg0t1rwa2d" path="res://level1/stage1/ends.gd" id="1_bss38"]
+[ext_resource type="Script" uid="uid://busk7jji54i8e" path="res://level1/stage1/sun_generation.gd" id="2_112p8"]
+[ext_resource type="PackedScene" uid="uid://c2vnxwr6dsj5o" path="res://level1/stage1/river_area.tscn" id="4_wqw7f"]
+[ext_resource type="PackedScene" uid="uid://dwuesm2vp676c" path="res://level1/stage1/of-egg.tscn" id="5_onvak"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqw7f"]
+radius = 79.025314
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xoua8"]
+radius = 89.140335
+
+[node name="Node" type="Node" unique_id=1754052362]
+
+[node name="River" type="Node" parent="." unique_id=2063441577]
+
+[node name="RiverArea1" parent="River" unique_id=759977183 instance=ExtResource("4_wqw7f")]
+flow_speed = 70
+can_have_sun = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea1" unique_id=2068874406]
+polygon = PackedVector2Array(-712, 288, 563, 201, 558, 372, -696, 472)
+
+[node name="RiverArea2" parent="River" unique_id=957381658 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea2" unique_id=1854654811]
+polygon = PackedVector2Array(376, 381, 610, 538, 575, 683, 183, 398)
+
+[node name="RiverArea3" parent="River" unique_id=1615444424 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea3" unique_id=991750198]
+polygon = PackedVector2Array(563, 198, 872, 175, 1153, 285, 556, 372)
+
+[node name="RiverArea4" parent="River" unique_id=1003406314 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea4" unique_id=1833774653]
+polygon = PackedVector2Array(610, -103, 1622, -327, 1604, -136, 889, 8)
+
+[node name="RiverArea5" parent="River" unique_id=1608562505 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea5" unique_id=1485655831]
+polygon = PackedVector2Array(609, 539, 966, 494, 1000, 635, 575, 682)
+
+[node name="RiverArea6" parent="River" unique_id=110471220 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea6" unique_id=1481888283]
+polygon = PackedVector2Array(1622, -327, 3458, -160, 3353, 4, 1604, -136)
+
+[node name="RiverArea7" parent="River" unique_id=146477702 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea7" unique_id=1942329388]
+polygon = PackedVector2Array(4210, 362, 5213, -225, 5214, -29, 4283, 523)
+
+[node name="RiverArea8" parent="River" unique_id=1015051439 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea8" unique_id=1886187455]
+polygon = PackedVector2Array(174, 228, 320, -42, 495, 29, 387, 212)
+
+[node name="RiverArea9" parent="River" unique_id=1696127396 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea9" unique_id=909566167]
+polygon = PackedVector2Array(405, -187, 1468, 240, 1281, 336, 320, -40)
+
+[node name="RiverArea10" parent="River" unique_id=636121522 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea10" unique_id=1704691920]
+polygon = PackedVector2Array(1000, 635, 1998, 170, 1943, -5, 966, 494)
+
+[node name="RiverArea11" parent="River" unique_id=695866401 instance=ExtResource("4_wqw7f")]
+can_have_sun = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea11" unique_id=907060024]
+polygon = PackedVector2Array(8054, 524, 9162, -88, 9060, -151, 7950, 460)
+
+[node name="RiverArea12" parent="River" unique_id=1125867612 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea12" unique_id=516597460]
+polygon = PackedVector2Array(1246, 523, 2833, 700, 2845, 897, 1000, 635)
+
+[node name="RiverArea13" parent="River" unique_id=743845085 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea13" unique_id=1335735478]
+polygon = PackedVector2Array(5214, -29, 7239, 757, 7375, 585, 5213, -225)
+
+[node name="RiverArea14" parent="River" unique_id=990278847 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea14" unique_id=947935749]
+polygon = PackedVector2Array(1775, 282, 4210, 360, 4283, 524, 1441, 432)
+
+[node name="RiverArea15" parent="River" unique_id=347446464 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea15" unique_id=1977063504]
+polygon = PackedVector2Array(3038, 776, 3731, 506, 4153, 520, 3311, 879)
+
+[node name="RiverArea16" parent="River" unique_id=1817095948 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea16" unique_id=1772752881]
+polygon = PackedVector2Array(2844, 896, 3847, 1318, 3858, 1081, 2833, 700)
+
+[node name="RiverArea18" parent="River" unique_id=854455814 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea18" unique_id=1627316746]
+polygon = PackedVector2Array(1970, -15, 3342, 333, 2692, 312, 2030, 164)
+
+[node name="Polygon2D2" type="Polygon2D" parent="River/RiverArea18" unique_id=1757733669]
+polygon = PackedVector2Array(2621, -755, 2602, -648, 2309, -637)
+
+[node name="RiverArea19" parent="River" unique_id=162193436 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea19" unique_id=1087367657]
+polygon = PackedVector2Array(2801, -41, 3536, 339, 3865, 349, 3164, -12)
+
+[node name="RiverArea20" parent="River" unique_id=1757869911 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea20" unique_id=1945562584]
+polygon = PackedVector2Array(2270, 457, 2401, 650, 2196, 634, 2075, 452)
+
+[node name="RiverArea21" parent="River" unique_id=1928286474 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea21" unique_id=937348544]
+polygon = PackedVector2Array(3361, -2, 4592, 140, 4852, -13, 3455, -158)
+
+[node name="RiverArea22" parent="River" unique_id=716484328 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea22" unique_id=1962870096]
+polygon = PackedVector2Array(1649, 727, 1864, 865, 1881, 1050, 1301, 678)
+
+[node name="RiverArea23" parent="River" unique_id=168726752 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea23" unique_id=1247719840]
+polygon = PackedVector2Array(1545, 201, 1710, -129, 1914, -112, 1799, 75)
+
+[node name="RiverArea24" parent="River" unique_id=331435662 instance=ExtResource("4_wqw7f")]
+can_have_sun = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea24" unique_id=883764422]
+polygon = PackedVector2Array(7473, 460, 8069, 458, 8047, 668, 7542, 677)
+
+[node name="RiverArea25" parent="River" unique_id=749492037 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea25" unique_id=407279137]
+polygon = PackedVector2Array(4887, 757, 6923, 1160, 7044, 1382, 4624, 897)
+
+[node name="RiverArea26" parent="River" unique_id=724739019 instance=ExtResource("4_wqw7f")]
+can_have_sun = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea26" unique_id=373784215]
+polygon = PackedVector2Array(8045, 550, 9334, 1335, 9277, 1420, 7938, 603)
+
+[node name="RiverArea27" parent="River" unique_id=77372782 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea27" unique_id=882495643]
+polygon = PackedVector2Array(6918, 1157, 7474, 460, 7544, 677, 7043, 1381)
+
+[node name="RiverArea28" parent="River" unique_id=1216266409 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea28" unique_id=646072908]
+polygon = PackedVector2Array(4413, 446, 4617, 659, 4808, 553, 4586, 343)
+
+[node name="RiverArea29" parent="River" unique_id=766094075 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea29" unique_id=1933730474]
+polygon = PackedVector2Array(3858, 1081, 4809, 552, 4945, 725, 3847, 1318)
+
+[node name="RiverArea30" parent="River" unique_id=1630962840 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea30" unique_id=911308207]
+polygon = PackedVector2Array(4809, 552, 5860, 218, 6109, 313, 4944, 724)
+
+[node name="RiverArea31" parent="River" unique_id=1589106093 instance=ExtResource("4_wqw7f")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River/RiverArea31" unique_id=1811856151]
+polygon = PackedVector2Array(1864, 866, 2196, 804, 2577, 860, 1881, 1050)
+
+[node name="Sun" type="Area2D" parent="." unique_id=1833199779]
+script = ExtResource("2_112p8")
+
+[node name="Background" type="Node" parent="." unique_id=1047979884]
+
+[node name="Puddles" type="Node" parent="." unique_id=216678629]
+
+[node name="Ends" type="Node" parent="." unique_id=69494018]
+script = ExtResource("1_bss38")
+
+[node name="Top" type="Area2D" parent="Ends" unique_id=1574511078]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ends/Top" unique_id=599402189]
+position = Vector2(8419, 260)
+shape = SubResource("CircleShape2D_wqw7f")
+
+[node name="ColorRect" type="ColorRect" parent="Ends/Top" unique_id=464628803]
+offset_left = 7791.0
+offset_top = 257.0
+offset_right = 7895.0
+offset_bottom = 313.0
+color = Color(1, 0.69803923, 0.42745098, 1)
+
+[node name="Label" type="Label" parent="Ends/Top/ColorRect" unique_id=82098884]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -16.5
+offset_right = 46.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Ends/Top/ColorRect" unique_id=1132178744]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 56.0
+offset_right = 60.0
+offset_bottom = 106.0
+color = Color(1, 0.69803923, 0.42745098, 1)
+
+[node name="Bottom" type="Area2D" parent="Ends" unique_id=581554452]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ends/Bottom" unique_id=1431166502]
+position = Vector2(8474, 874)
+shape = SubResource("CircleShape2D_xoua8")
+
+[node name="ColorRect" type="ColorRect" parent="Ends/Bottom" unique_id=1904161618]
+offset_left = 7865.0
+offset_top = 697.0
+offset_right = 7969.0
+offset_bottom = 753.0
+color = Color(1, 0.69803923, 0.42745098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Ends/Bottom/ColorRect" unique_id=642519419]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -16.5
+offset_right = 46.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Ends/Bottom/ColorRect" unique_id=1963106221]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 56.0
+offset_right = 60.0
+offset_bottom = 106.0
+color = Color(1, 0.69803923, 0.42745098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=1693506226 instance=ExtResource("5_onvak")]
+position = Vector2(25, 247)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1457123701]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1375645659]
+polygon = PackedVector2Array(381, 385, 1151, 285, 1272, 336, 966, 493, 610, 539)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=1016860893]
+polygon = PackedVector2Array(386, 209, 494, 30, 869, 176)

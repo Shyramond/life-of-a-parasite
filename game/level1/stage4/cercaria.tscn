@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bfso5mklmmv8e"]
+
+[ext_resource type="Script" uid="uid://c6u64m6b1gsme" path="res://level1/stage4/player.gd" id="1_li4i6"]
+
+[sub_resource type="Curve" id="Curve_v8a4a"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0.3932581), 0.0, 14.382026, 0, 0, Vector2(0.19, 1.5168538), 0.0, 0.0, 0, 0, Vector2(0.38500005, 1.2921348), -5.4477367, -5.4477367, 0, 0, Vector2(0.55, 0.5617976), 0.0, 0.0, 0, 0, Vector2(1, 0.33707857), -1.3758312, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_li4i6"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" unique_id=533715449]
+scale = Vector2(1.5, 1.5)
+points = PackedVector2Array(0, 0, 5, 0, 10, 0, 15, 0, 20, 0, 25, 0, 30, 0, 35, 0, 40, 0, 45, 0, 50, 0, 55, 0, 60, 0)
+width_curve = SubResource("Curve_v8a4a")
+default_color = Color(0.8907968, 0.51814604, 0.31559923, 1)
+joint_mode = 1
+script = ExtResource("1_li4i6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1378110398]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=37900554]
+
+[node name="ProgressBar" type="ProgressBar" parent="Node2D" unique_id=542542944]
+offset_left = -25.333334
+offset_top = -59.333336
+offset_right = 25.666666
+offset_bottom = -37.333336
+theme_override_font_sizes/font_size = 13
+theme_override_styles/fill = SubResource("StyleBoxFlat_li4i6")
+value = 100.0
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1245479325]
+offset_left = -40.0
+offset_top = 22.666668
+offset_right = 40.0
+offset_bottom = 45.666668
+theme_override_font_sizes/font_size = 16
+text = "Церкария"

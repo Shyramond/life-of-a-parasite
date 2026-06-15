@@ -1,26 +1,64 @@
-extends Node
+extends Node2D
 
+signal new_stage
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var path_load = preload("res://level1/stage4/path_2d.tscn")
-	var fish1_load = preload("res://level1/stage4/fish1.tscn")
-	var fish_load = [preload("res://level1/stage4/fish2.tscn"), preload("res://level1/stage4/fish3.tscn")]
-	for i in range(8):
-		var path = path_load.instantiate()
-		path.position.y = 540 - i * 60
-		path.name = "Path" + str(i)
-		add_child(path)
-	var correct_fish = randi() % 3 + 5
-	var fish1 = fish1_load.instantiate()
-	fish1.name = "Fish1"
-	get_node("Path" + str(correct_fish) + "/PathFollow2D").add_child(fish1)
-	for i in range(8):
-		if i != correct_fish:
-			var fish = fish_load.pick_random().instantiate()
-			get_node("Path" + str(i) + "/PathFollow2D").add_child(fish)
+var stage = 1
+const cells = [preload("res://level1/stage4/cell1.tscn"), preload("res://level1/stage4/cell2.tscn"), preload("res://level1/stage4/cell3.tscn")]
 
+func _on_timer_timeout() -> void:
+	var cell_index = randi() % stage
+	var cell = cells[cell_index].instantiate()
+	get_node("Path2D/PathFollow2D").progress_ratio = randf()
+	cell.position = get_node("Path2D/PathFollow2D").position
+	if cell_index == 0:
+		cell.dir = Vector2(0, 1).rotated(get_node("Path2D/PathFollow2D").rotation + randf_range(-PI / 4, PI / 4))
+		cell.get_node("VisibleOnScreenNotifier2D").screen_exited.connect(func(): cell.queue_free())
+	elif cell_index == 1:
+		cell.get_node("PathFollow2D").dir = Vector2(0, 1).rotated(get_node("Path2D/PathFollow2D").rotation + randf_range(-PI / 4, PI / 4))
+		cell.get_node("PathFollow2D/Area2D/VisibleOnScreenNotifier2D").screen_exited.connect(func(): cell.queue_free())
+	elif cell_index == 2:
+		cell.player = get_node("Player")
+		cell.get_node("VisibleOnScreenNotifier2D").screen_exited.connect(func(): cell.queue_free())
+	get_node("Cells").add_child(cell)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func cell_delete(cell):
+	cell.queue_free()
+
+func _on_stage_timer_timeout() -> void:
+	var player_position = get_node("Player").to_global(get_node("Player").points[0])
+	var player_health = get_node("Player").health
+	var mouse_movement = get_node("Player").mouse_movement
+	var npc_script = preload("npc.gd")
+	var player = null
+	var scene = null
+	if stage == 1:
+		get_node("Player").name = "npc"
+		get_node("npc").queue_free()
+		player = get_node("Player2")
+		scene = preload("res://level1/stage4/redia.tscn")
+	elif stage == 2:
+		get_node("Player").name = "npc"
+		get_node("npc").set_script(npc_script)
+		get_node("npc/Node2D").free()
+		get_node("npc/Area2D").collision_layer = 0
+		get_node("npc").set_process(true)
+		player = get_node("Player3")
+		scene = preload("res://level1/stage4/cercaria.tscn")
+	else:
+		return
+	stage += 1
+	player.position = player_position
+	player.position = player_position
+	player.name = "Player"
+	player.speed = (stage - 1) * 100
+	player.mouse_movement = mouse_movement
+	player.process_mode = PROCESS_MODE_INHERIT
+	for i in range(10):
+		var npc = scene.instantiate()
+		npc.set_script(npc_script)
+		npc.get_node("Node2D").queue_free()
+		npc.position = player_position
+		npc.name = "npc" + str(stage) + str(i)
+		npc.get_node("Area2D").collision_layer = 0
+		add_child(npc)
+	new_stage.emit()

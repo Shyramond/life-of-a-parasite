@@ -6,6 +6,11 @@ signal level_complete
 @onready var spine = $spine
 @export var radius: int
 @export var vel: int
+var mouse_movement = false
+
+func _unhandled_input(input):
+	if input.is_action_pressed("lmb"):
+		mouse_movement = !mouse_movement
 
 func _ready():
 	for i in range(spine.points.size()):
@@ -19,14 +24,18 @@ func get_dir():
 	
 	if Input.is_action_pressed("lmb"):
 		move = (get_global_mouse_position() - spine.points[0]).limit_length(1)
+	if mouse_movement:
+		var distance = get_global_mouse_position() - to_global(spine.points[0])
+		move = distance.limit_length(1)
+		if distance.length() <= 50:
+			move *= distance.length() / 50
 	return move
-
 
 func _physics_process(delta):
 	var pts = spine.points
 	
 	pts[0] += get_dir() * vel * delta
-	
+
 	for i in range(1, pts.size()):
 		pts[i] = pts[i - 1] + (pts[i] - pts[i - 1]).limit_length(radius)
 	spine.points = pts

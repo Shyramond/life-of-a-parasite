@@ -10,6 +10,7 @@ offset_left = -8732.0
 offset_top = -6401.0
 offset_right = 9223.0
 offset_bottom = 6078.0
+mouse_filter = 2
 color = Color(0.53686285, 0.35642397, 0.1627689, 1)
 
 [node name="Player" parent="." unique_id=1693506226 instance=ExtResource("3_he73a")]

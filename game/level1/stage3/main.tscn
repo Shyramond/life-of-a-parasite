@@ -1,45 +1,54 @@
-[gd_scene format=3 uid="uid://d4ekggbje5dua"]
+[gd_scene format=3 uid="uid://d4gg545ss7mc2"]
 
-[ext_resource type="Script" uid="uid://d0y418t5ejglj" path="res://level1/stage3/main.gd" id="1_0vwka"]
-[ext_resource type="PackedScene" uid="uid://uwjtcio2vd4t" path="res://level1/stage3/character_body_2d.tscn" id="2_ah7jn"]
-[ext_resource type="PackedScene" uid="uid://lhf60bmoupby" path="res://level1/stage3/character_body_2d2.tscn" id="3_6nre3"]
-[ext_resource type="PackedScene" uid="uid://di7wv0o81obfm" path="res://level1/stage3/character_body_2d3.tscn" id="4_rhgvk"]
+[ext_resource type="Script" uid="uid://c5w4gcba6utn2" path="res://level1/stage3/main.gd" id="1_0t5pl"]
+[ext_resource type="PackedScene" uid="uid://cgtvexius1pf5" path="res://level1/stage3/miracidium.tscn" id="2_0t5pl"]
 
-[sub_resource type="Curve2D" id="Curve2D_jmcrw"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 1153, 2, 0, 0, 0, 0, 1148, 647, 0, 0, 0, 0, 2, 650, 0, 0, 0, 0, 3, 2)
-}
-point_count = 5
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t5pl"]
+bg_color = Color(1, 0, 0, 1)
 
-[node name="Node" type="Node" unique_id=1477475196]
-script = ExtResource("1_0vwka")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrusn"]
+bg_color = Color(0.8, 0, 0, 1)
 
-[node name="Player" parent="." unique_id=78427286 instance=ExtResource("2_ah7jn")]
-position = Vector2(568, 317)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nre3"]
+bg_color = Color(0.5, 0, 0, 1)
 
-[node name="Player2" parent="." unique_id=226060142 instance=ExtResource("3_6nre3")]
-process_mode = 4
-position = Vector2(554, -359)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhgvk"]
+bg_color = Color(0.5, 0, 0, 1)
 
-[node name="Player3" parent="." unique_id=1826687951 instance=ExtResource("4_rhgvk")]
-process_mode = 4
-position = Vector2(555, -361)
+[sub_resource type="InputEventKey" id="InputEventKey_eiouu"]
+device = -1
+keycode = 32
+unicode = 32
 
-[node name="Path2D" type="Path2D" parent="." unique_id=2097430652]
-curve = SubResource("Curve2D_jmcrw")
+[sub_resource type="Shortcut" id="Shortcut_0t5pl"]
+events = [SubResource("InputEventKey_eiouu")]
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=436812741]
-position = Vector2(3, 2)
+[node name="Node" type="Node" unique_id=1165680139]
+script = ExtResource("1_0t5pl")
 
-[node name="CellTimer" type="Timer" parent="." unique_id=1798218118]
-wait_time = 0.5
-autostart = true
+[node name="ColorRect" type="ColorRect" parent="." unique_id=85723862]
+offset_top = 250.0
+offset_right = 1152.0
+offset_bottom = 350.0
+color = Color(0.7141465, 0.30342138, 0.25180838, 1)
 
-[node name="Cells" type="Node" parent="." unique_id=1140283951]
+[node name="Button" type="Button" parent="." unique_id=371289549]
+offset_left = 978.0
+offset_top = 50.0
+offset_right = 1084.0
+offset_bottom = 106.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0t5pl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xrusn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6nre3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rhgvk")
+shortcut = SubResource("Shortcut_0t5pl")
 
-[node name="StageTimer" type="Timer" parent="." unique_id=154548479]
-wait_time = 20.0
-autostart = true
+[node name="Timer" type="Timer" parent="." unique_id=802076599]
+one_shot = true
 
-[connection signal="timeout" from="CellTimer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="StageTimer" to="." method="_on_stage_timer_timeout"]
+[node name="Player" parent="." unique_id=1857829384 instance=ExtResource("2_0t5pl")]
+position = Vector2(550, 350)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

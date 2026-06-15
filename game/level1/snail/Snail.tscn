@@ -6,6 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8utro"]
 radius = 31.06445
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qjto3"]
+resource_local_to_scene = true
+radius = 50.0
+height = 100.0
+
 [node name="Snail" type="Node2D" unique_id=1674894937]
 script = ExtResource("1_nu36u")
 
@@ -26,3 +31,10 @@ script = ExtResource("2_53rv8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1522130007]
 shape = SubResource("CircleShape2D_8utro")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1754666175]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1198739195]
+shape = SubResource("CapsuleShape2D_qjto3")
+
+[connection signal="input_event" from="Area2D2" to="." method="_on_area_2d_2_input_event"]

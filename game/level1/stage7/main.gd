@@ -1,33 +1,38 @@
 extends Node
 
-var coords = [Vector2(-250, 1000), Vector2(-400, -300), Vector2(250, 1000)]
+signal level_complete()
+signal death(reason)
+
+var correct = [
+	"Холодное копчение при температуре 30 С в течении 2 часов",
+	"Жарить на углях 7 минут",
+	"Маринование",
+	"Быстрый посол",
+	"Заморозить, затем съесть сырой",
+	"Вяление"
+]
+
+var incorrect = [
+	"Варить 20 минут",
+	"Горячее копчение при температуре 90 С в течении 2 часов",
+	"Печь в духовке 60 минут при температуре 180 С",
+	"Посол на 30 суток"
+]
+
+var correct_index = randi() % correct.size()
+var incorrect_index = randi() % incorrect.size()
 
 func _ready() -> void:
-	var cell_load = preload("res://level1/stage7/cell.tscn")
-	for i in range(150):
-		var cell = cell_load.instantiate()
-		cell.name = "Cell1" + str(i)
-		cell.speed = randi() % 20 + 50
-		cell.dir = Vector2(randi() - 2**31, randi() - 2**31).normalized()
-		cell.position = coords.pick_random()
-		cell.position.x = randi() % 600 - 1600
-		cell.position.y = randi() % 1400 + 400
-		cell.collision_mask = 1
-		cell.collision_layer = 4
-		get_node("Area2D1").add_child(cell)
-	for i in range(40):
-		var cell = cell_load.instantiate()
-		cell.name = "Cell2" + str(i)
-		cell.speed = randi() % 20 + 50
-		cell.dir = Vector2(randi() - 2**31, randi() - 2**31).normalized()
-		cell.position = coords.pick_random()
-		cell.collision_mask = 2
-		cell.collision_layer = 8
-		get_node("Area2D3").add_child(cell)
-	get_node("Player/Area2D").area_entered.connect(get_node("Area2D1")._on_character_body_2d_new_area)
-	get_node("Player/Area2D").area_entered.connect(get_node("Area2D3")._on_character_body_2d_new_area)
+	var rand_num = round(randf())
+	get_node("Button").name = "Correct" if rand_num else "Incorrect"
+	get_node("Button2").name = "Correct" if !rand_num else "Incorrect"
+	get_node("Correct").text = correct[correct_index]
+	get_node("Incorrect").text = incorrect[incorrect_index]
+	get_node("Correct").pressed.connect(correct_button)
+	get_node("Incorrect").pressed.connect(incorrect_button)
 
+func correct_button():
+	level_complete.emit()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func incorrect_button():
+	death.emit("button" + str(incorrect_index))

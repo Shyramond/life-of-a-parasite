@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dn6tw6bk3wdwo"]
+
+[ext_resource type="Script" uid="uid://dv8quqje53xkr" path="res://ui/death_message.gd" id="1_1k7md"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1234570501]
+
+[node name="Label" type="Label" parent="." unique_id=132457920]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -484.0
+offset_top = -84.0
+offset_right = 491.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("1_1k7md")

@@ -55,5 +55,3 @@ end_cap_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=191146763]
 shape = SubResource("CapsuleShape2D_kl355")
-
-[node name="Camera2D" type="Camera2D" parent="Area2D/CollisionShape2D" unique_id=1671542970]

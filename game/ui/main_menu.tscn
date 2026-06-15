@@ -21,7 +21,14 @@ offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NewGame" type="Button" parent="VBoxContainer" unique_id=1169294502]
-custom_minimum_size = Vector2(300, 70)
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1169294502]
+custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
-text = "Новая игра"
+theme_override_font_sizes/font_size = 24
+text = "Тренировочный режим"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1102473795]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Экзаменационный режим"

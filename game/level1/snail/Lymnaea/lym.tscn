@@ -16,6 +16,11 @@ point_count = 2
 _data = [Vector2(0, 0.612936), 0.0, -0.43639, 0, 0, Vector2(1, 0.0790554), -0.650168, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qqjs1"]
+resource_local_to_scene = true
+radius = 50.0
+height = 100.0
+
 [node name="Snail" unique_id=2116479862 instance=ExtResource("1_wykwu")]
 scale = Vector2(0.5, 0.5)
 radius = 6
@@ -72,10 +77,5 @@ polygon = PackedVector2Array(104, -11, 126, -10, 146, -2, 163, 11, 177, 47, 164,
 color = Color(0.324219, 0.197541, 0.0493927, 1)
 polygon = PackedVector2Array(-54, -1, -42, -28, -7, -48, 44, -54, 86, -43, 112, -10, 135, 60, 117, 79, 94, 87, 51, 83, 32, 80, -27, 42, -39, 38, -53, 21)
 
-[node name="Label" type="Label" parent="Area2D" parent_id_path=PackedInt32Array(577916584) index="1" unique_id=974335922]
-offset_left = -54.0
-offset_top = -80.0
-offset_right = 56.0
-offset_bottom = -45.0
-theme_override_font_sizes/font_size = 25
-text = "Lymnaea"
+[node name="CollisionShape2D" parent="Area2D2" parent_id_path=PackedInt32Array(1754666175) index="0" unique_id=1198739195]
+shape = SubResource("CapsuleShape2D_qqjs1")

@@ -8,20 +8,20 @@ signal death(reason)
 signal level_complete
 
 const land_damage = 20
+const sun_damage = 20
 
 var speed = initial_speed
 var flow_dir = []
 var flow_speed = []
 var health = 100
-var sun_damage = 0
+var cur_sun_damage = 0
 var sun_count = 0
 var cur_land_damage = 0
 var mouse_movement = false
 
-func _unhandled_input(input):
-	if input is InputEventMouseButton and input.pressed:
-		if input.button_index == MOUSE_BUTTON_LEFT:
-			mouse_movement = !mouse_movement
+func _unhandled_input(event):
+	if event.is_action_pressed("lmb"):
+		mouse_movement = !mouse_movement
 
 func get_dir():
 	var move = Vector2(
@@ -32,8 +32,8 @@ func get_dir():
 	if mouse_movement:
 		var distance = get_global_mouse_position() - to_global(spine.points[0])
 		move = distance.limit_length(1)
-		if distance.length() <= 100:
-			move *= distance.length() / 100
+		if distance.length() <= 50:
+			move *= distance.length() / 50
 	return move
 
 func _physics_process(delta: float) -> void:
@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	var velocity = Vector2(0, 0)
 	if !flow_dir.is_empty():
 		velocity = flow_dir[flow_dir.size() - 1] * flow_speed[flow_speed.size() - 1]
-	health -= (sun_damage + cur_land_damage) * delta
+	health -= (cur_sun_damage + cur_land_damage) * delta
 	if health <= 0:
 		death.emit("health1")
 	position += velocity * delta
@@ -68,7 +68,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		flow_dir.append(area.flow_dir)
 		flow_speed.append(area.flow_speed)
 	if area.name == "Sun":
-		sun_damage = 30
+		cur_sun_damage = sun_damage
 		sun_count += 1
 	if area.name == "Freshwater":
 		level_complete.emit()
@@ -85,7 +85,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "Sun":
 		sun_count -= 1
 		if sun_count == 0:
-			sun_damage = 0
+			cur_sun_damage = 0
 
 
 

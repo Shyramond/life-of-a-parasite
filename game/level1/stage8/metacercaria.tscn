@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ck1n8wuu14a41"]
+
+[ext_resource type="Script" uid="uid://bkj5pj2wl65rp" path="res://level1/stage8/metacercaria.gd" id="1_n38jq"]
+
+[sub_resource type="Curve" id="Curve_w73q4"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0.67415714), 0.0, 11.668109, 0, 0, Vector2(0.51000005, 2.52809), 0.0, 0.0, 0, 0, Vector2(1, 0.6179776), -12.306057, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n38jq"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" unique_id=222339040]
+points = PackedVector2Array(0, 0, 5, 0, 10, 0, 15, 0, 20, 0, 25, 0, 30, 0, 35, 0, 40, 0, 45, 0, 50, 0, 55, 0, 60, 0)
+width_curve = SubResource("Curve_w73q4")
+default_color = Color(0.84055585, 0.4408931, 0.19105038, 1)
+script = ExtResource("1_n38jq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=209796978]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1858494898]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1219121060]
+
+[node name="ProgressBar" type="ProgressBar" parent="Node2D" unique_id=483020747]
+offset_left = -26.0
+offset_top = -58.0
+offset_right = 27.0
+offset_bottom = -36.0
+theme_override_font_sizes/font_size = 13
+theme_override_styles/fill = SubResource("StyleBoxFlat_n38jq")
+value = 100.0
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1233044048]
+offset_left = -75.0
+offset_top = 31.0
+offset_right = 75.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 20
+text = "Метацеркария"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

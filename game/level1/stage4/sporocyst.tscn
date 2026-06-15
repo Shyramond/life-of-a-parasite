@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cbkk0i8rcbdke"]
+
+[sub_resource type="Curve" id="Curve_gmbnj"]
+_limits = [0.0, 10.0, 0.0, 1.0]
+_data = [Vector2(0, 1.0112352), 0.0, 21.494871, 0, 0, Vector2(0.50500005, 5.3932586), 0.0, 0.0, 0, 0, Vector2(1, 1.0112352), -16.853947, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmbnj"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" unique_id=898340681]
+points = PackedVector2Array(0, 0, 5, 0, 10, 0, 15, 0, 20, 0, 25, 0, 30, 0, 35, 0, 40, 0, 45, 0, 50, 0, 55, 0, 60, 0)
+width_curve = SubResource("Curve_gmbnj")
+default_color = Color(0.9141963, 0.5545702, 0.33430707, 1)
+joint_mode = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2015285334]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1942975665]
+
+[node name="ProgressBar" type="ProgressBar" parent="Node2D" unique_id=1877094281]
+offset_left = -32.0
+offset_top = -73.0
+offset_right = 32.0
+offset_bottom = -46.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_gmbnj")
+value = 100.0
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1302638750]
+offset_left = -72.0
+offset_top = 41.0
+offset_right = 73.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 24
+text = "Спороциста"

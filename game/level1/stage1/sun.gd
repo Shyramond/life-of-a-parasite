@@ -29,7 +29,7 @@ func _ready() -> void:
 	var river_areas = get_node("../River").get_children()
 	river_areas = river_areas.filter(func(elem): return elem.name.begins_with("RiverArea") and elem.can_have_sun)
 	var weights = river_areas.map(func(elem): return get_size(elem.find_child("CollisionPolygon2D").polygon))
-	for i in range(150):
+	for i in range(100):
 		var shape = river_areas[rng.rand_weighted(weights)].find_child("CollisionPolygon2D").polygon
 		var side1 = (shape[1] - shape[0]).normalized()
 		var side2 = (shape[2] - shape[1]).normalized()

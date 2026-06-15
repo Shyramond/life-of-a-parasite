@@ -16,6 +16,11 @@ point_count = 2
 _data = [Vector2(0, 0.70396), 0.0, -0.444955, 0, 0, Vector2(1, 0.225873), -0.516608, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yp0qn"]
+resource_local_to_scene = true
+radius = 50.0
+height = 100.0
+
 [node name="Snail" unique_id=731812845 instance=ExtResource("1_xngo8")]
 scale = Vector2(0.5, 0.5)
 radius = 9
@@ -78,10 +83,5 @@ polygon = PackedVector2Array(-14, -64, 13, -41, 42, 60, 58, 120, 84, 174, 102, 1
 color = Color(0.726563, 0.557804, 0.360443, 1)
 polygon = PackedVector2Array(133, -17, 147, 4, 159, 60, 164, 122, 163, 140, 166, 141, 174, 136, 173, 100, 166, 41, 157, 1, 147, -16)
 
-[node name="Label" type="Label" parent="Area2D" parent_id_path=PackedInt32Array(577916584) index="1" unique_id=1341088396]
-offset_left = -56.0
-offset_top = -84.0
-offset_right = 56.0
-offset_bottom = -49.0
-theme_override_font_sizes/font_size = 25
-text = "Viviparus"
+[node name="CollisionShape2D" parent="Area2D2" parent_id_path=PackedInt32Array(1754666175) index="0" unique_id=1198739195]
+shape = SubResource("CapsuleShape2D_yp0qn")

@@ -1,11 +1,17 @@
 extends Node
 
+var max_distance = 1000
+var count = 40
+
 func snail_instantiate(snail1, name1):
 	var snail = snail1.instantiate()
 	snail.name = name1
-	while (snail.position.length() <= 200):
-		snail.position = Vector2(randi() % 1000 - 500, randi() % 1000 - 500)
+	var distance = randi() % (max_distance - 200) + 200
+	var angle = randi() % 360
+	snail.position = Vector2(distance * sin(angle), distance * cos(angle))
+	snail.max_distance = max_distance
 	add_child(snail)
+	#snail.get_node("Area2D2").input_event.connect(input_event)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,9 +20,10 @@ func _ready() -> void:
 	var plan = preload("res://level1/snail/Planorbis/plan.tscn")
 	var vivi = preload("res://level1/snail/Viviparus/vivi.tscn")
 	snail_instantiate(bith, "Bith")
-	var arr = [lym, plan, vivi]
-	for i in range(20):
-		snail_instantiate(arr.pick_random(), str(i))
+	var arr = {"Lymn": lym, "Plan": plan, "Vivi": vivi}
+	for i in range(count):
+		var random = arr.keys().pick_random()
+		snail_instantiate(arr[random], random + str(i))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -12,6 +12,11 @@ point_count = 6
 _data = [Vector2(0, 0.406057), 0.0, -0.467824, 0, 0, Vector2(0.944149, 0.111881), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.328653, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_13pxe"]
+resource_local_to_scene = true
+radius = 50.0
+height = 100.0
+
 [node name="Snail" unique_id=700525171 instance=ExtResource("1_nibd5")]
 scale = Vector2(0.5, 0.5)
 radius = 5
@@ -51,10 +56,5 @@ rotation = -1.57079
 scale = Vector2(0.374464, 0.374464)
 texture = ExtResource("2_oartu")
 
-[node name="Label" type="Label" parent="Area2D" parent_id_path=PackedInt32Array(577916584) index="1" unique_id=962038169]
-offset_left = -56.0
-offset_top = -78.0
-offset_right = 57.0
-offset_bottom = -43.0
-theme_override_font_sizes/font_size = 25
-text = "Planorbis"
+[node name="CollisionShape2D" parent="Area2D2" parent_id_path=PackedInt32Array(1754666175) index="0" unique_id=1198739195]
+shape = SubResource("CapsuleShape2D_13pxe")

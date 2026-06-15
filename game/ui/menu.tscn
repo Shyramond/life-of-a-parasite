@@ -1,5 +1,12 @@
 [gd_scene format=3 uid="uid://cflj0ollrfgsc"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_qxhxg"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_bwjgb"]
+events = [SubResource("InputEventKey_qxhxg")]
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=247644503]
 process_mode = 3
 
@@ -25,14 +32,18 @@ grow_vertical = 2
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
 size_flags_stretch_ratio = 10.26
-text = "Resume"
+theme_override_font_sizes/font_size = 24
+shortcut = SubResource("Shortcut_bwjgb")
+text = "Продолжить"
 
 [node name="Restart" type="Button" parent="VBoxContainer" unique_id=465186233]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-text = "Restart"
+theme_override_font_sizes/font_size = 24
+text = "Рестарт"
 
 [node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1057364371]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-text = "Main Menu"
+theme_override_font_sizes/font_size = 24
+text = "Главное меню"

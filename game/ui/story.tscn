@@ -25,6 +25,7 @@ offset_left = 260.0
 offset_top = 68.0
 offset_right = 869.5
 offset_bottom = 410.0
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -32,8 +33,9 @@ script = ExtResource("1_mq37v")
 
 [node name="Button" type="Button" parent="ColorRect" unique_id=1283586424]
 layout_mode = 0
-offset_left = 538.0
-offset_top = 568.0
-offset_right = 610.5
-offset_bottom = 599.0
+offset_left = 500.0
+offset_top = 530.0
+offset_right = 650.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 24
 text = "ОК"

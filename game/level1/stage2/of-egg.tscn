@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmw1c5d5xut5d" path="res://level1/stage2/of_egg.gd" id="1_vlu2l"]
 [ext_resource type="Script" uid="uid://c1djifru0e50j" path="res://level1/OPISTHORCHIS FELINEUS/spine.gd" id="2_ogeir"]
+[ext_resource type="Script" uid="uid://cjwabnt2wdfpy" path="res://level1/stage2/camera_2d.gd" id="3_mk4by"]
 
 [sub_resource type="Curve" id="Curve_248dm"]
 _data = [Vector2(0, 0.010989), 0.0, 7.1917, 0, 0, Vector2(0.142105, 0.659341), 1.79792, 1.79792, 0, 0, Vector2(0.505263, 1), 0.0, 0.0, 0, 0, Vector2(0.926316, 0.505494), -2.58503, -2.58503, 0, 0, Vector2(1, 0.010989), -15.6594, 0.0, 0, 0]
@@ -20,7 +21,7 @@ height = 112.0
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_vlu2l")
 radius = 6
-vel = 100
+vel = 200
 
 [node name="spine" type="Line2D" parent="." unique_id=675372347]
 points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -57,13 +58,14 @@ end_cap_mode = 2
 shape = SubResource("CapsuleShape2D_kl355")
 
 [node name="Camera2D" type="Camera2D" parent="Area2D/CollisionShape2D" unique_id=1671542970]
+script = ExtResource("3_mk4by")
 
 [node name="Label" type="Label" parent="Area2D" unique_id=875311115]
-offset_left = -56.0
-offset_top = 62.0
-offset_right = 58.0
-offset_bottom = 123.0
-theme_override_font_sizes/font_size = 44
+offset_left = -68.0
+offset_top = 68.0
+offset_right = 67.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 52
 text = "Яйцо"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
