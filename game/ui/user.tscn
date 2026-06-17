@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cwchj6rn7nqrl"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=740454633]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=536298401]
+offset_right = 1154.0
+offset_bottom = 650.0
+color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+
+[node name="Username" type="Label" parent="." unique_id=1755106894]
+offset_left = 486.0
+offset_top = 63.0
+offset_right = 666.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 32
+
+[node name="Total" type="Label" parent="." unique_id=1023309662]
+offset_left = 357.0
+offset_top = 151.0
+offset_right = 801.0
+offset_bottom = 294.0
+theme_override_font_sizes/font_size = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=147116688]
+offset_left = 357.0
+offset_top = 297.0
+offset_right = 801.0
+offset_bottom = 498.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=933531730]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="." unique_id=559461613]
+offset_left = 491.0
+offset_top = 534.0
+offset_right = 663.0
+offset_bottom = 592.0
+theme_override_font_sizes/font_size = 24
+text = "Назад"

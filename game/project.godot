@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="5"
+config/name="index"
+run/main_scene="uid://cc0qmqyx3cd6x"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

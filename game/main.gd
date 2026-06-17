@@ -10,6 +10,8 @@ var wrong_answers = 0
 var cur_level = 1
 var cur_stage = 1
 var mode = 0
+var username = null
+var password = null
 
 func _ready() -> void:
 	ui_add("main_menu")
@@ -68,6 +70,7 @@ func restart():
 func death(reason):
 	if cur_level == 9:
 		ui_add("game_end")
+		save_game()
 	else:
 		ui_add("death_message", reason)
 		get_tree().paused = true
@@ -130,6 +133,8 @@ func ui_add(ui_name, param = null):
 	elif ui_name == "main_menu":
 		ui.get_node("VBoxContainer/Button").pressed.connect(game_start)
 		ui.get_node("VBoxContainer/Button2").pressed.connect(func(): mode = 1; game_start())
+		ui.get_node("VBoxContainer/Button3").pressed.connect(ui_add.bind("login"))
+		ui.get_node("VBoxContainer/Button4").pressed.connect(ui_add.bind("accounts"))
 	elif ui_name == "story":
 		ui.get_node("ColorRect/Button").pressed.connect(ui_remove.bind("story"))
 	elif ui_name == "questions":
@@ -139,3 +144,23 @@ func ui_add(ui_name, param = null):
 		ui.get_node("Label").display(param)
 	elif ui_name == "game_end":
 		ui.get_node("Button").pressed.connect(func(): get_tree().reload_current_scene())
+	elif ui_name == "login":
+		ui.success.connect(login)
+	elif ui_name == "accounts":
+		ui.get_node("Back").pressed.connect(ui_remove.bind("accounts"))
+
+func save_game():
+	var http_request = get_node("HTTPRequest")
+	var data = {
+		"username": username,
+		"password": password,
+		"deaths": deaths,
+		"wrong_answers": wrong_answers
+	}
+	http_request.request("http://127.0.0.1:8000/api/add_game", ["Content-Type: application/json"], HTTPClient.METHOD_POST, JSON.stringify(data))
+
+func login(username1, password1):
+	username = username1
+	password = password1
+	ui_remove("login")
+	get_node("main_menu/Label").text = username

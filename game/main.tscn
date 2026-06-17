@@ -4,3 +4,6 @@
 
 [node name="Node" type="Node" unique_id=622751169]
 script = ExtResource("1_sy5k4")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=79638435]
+process_mode = 3

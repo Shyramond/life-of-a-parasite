@@ -32,3 +32,23 @@ custom_minimum_size = Vector2(350, 70)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Экзаменационный режим"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=838575890]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Логин/Регистрация"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1839185911]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Аккаунты"
+
+[node name="Label" type="Label" parent="." unique_id=120582034]
+offset_left = 401.0
+offset_top = 138.0
+offset_right = 751.0
+offset_bottom = 165.0
+horizontal_alignment = 1
+vertical_alignment = 1
