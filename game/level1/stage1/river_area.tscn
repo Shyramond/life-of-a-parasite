@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2vnxwr6dsj5o"]
+
+[ext_resource type="Script" uid="uid://lqnh7opdmdfl" path="res://level1/stage1/river_area.gd" id="1_em3l7"]
+
+[node name="Area2D" type="Area2D" unique_id=759977183]
+script = ExtResource("1_em3l7")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=197209682]
+color = Color(0, 0.7058824, 1, 1)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=489728122]
+closed = true
+width = 1.0
+default_color = Color(0, 0.7058824, 1, 1)

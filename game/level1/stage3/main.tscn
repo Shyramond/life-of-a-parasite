@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d4gg545ss7mc2"]
+
+[ext_resource type="Script" uid="uid://c5w4gcba6utn2" path="res://level1/stage3/main.gd" id="1_0t5pl"]
+[ext_resource type="PackedScene" uid="uid://cgtvexius1pf5" path="res://level1/stage3/miracidium.tscn" id="2_0t5pl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t5pl"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrusn"]
+bg_color = Color(0.8, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nre3"]
+bg_color = Color(0.5, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhgvk"]
+bg_color = Color(0.5, 0, 0, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_eiouu"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_0t5pl"]
+events = [SubResource("InputEventKey_eiouu")]
+
+[node name="Node" type="Node" unique_id=1165680139]
+script = ExtResource("1_0t5pl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=85723862]
+offset_top = 250.0
+offset_right = 1152.0
+offset_bottom = 350.0
+color = Color(0.7141465, 0.30342138, 0.25180838, 1)
+
+[node name="Button" type="Button" parent="." unique_id=371289549]
+offset_left = 978.0
+offset_top = 50.0
+offset_right = 1084.0
+offset_bottom = 106.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0t5pl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xrusn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6nre3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rhgvk")
+shortcut = SubResource("Shortcut_0t5pl")
+
+[node name="Timer" type="Timer" parent="." unique_id=802076599]
+one_shot = true
+
+[node name="Player" parent="." unique_id=1857829384 instance=ExtResource("2_0t5pl")]
+position = Vector2(550, 350)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

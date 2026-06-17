@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://khck8ckgnjo0"]
+
+[ext_resource type="Shader" path="res://pixelate_shader.gdshader" id="1_hd1ek"]
+[ext_resource type="PackedScene" uid="uid://bfxy3bw0qc3ij" path="res://snail/Viviparus/vivi.tscn" id="1_ol1hp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4yciq"]
+shader = ExtResource("1_hd1ek")
+shader_parameter/pixel_size = 4.0
+
+[node name="main" type="Node2D"]
+
+[node name="Snail" parent="." instance=ExtResource("1_ol1hp")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_4yciq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

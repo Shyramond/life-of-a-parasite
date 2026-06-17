@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d4ekggbje5dua"]
+
+[ext_resource type="Script" uid="uid://d0y418t5ejglj" path="res://level1/stage4/main.gd" id="1_0vwka"]
+[ext_resource type="PackedScene" uid="uid://cbkk0i8rcbdke" path="res://level1/stage4/sporocyst.tscn" id="2_ryxec"]
+[ext_resource type="Script" uid="uid://c6u64m6b1gsme" path="res://level1/stage4/player.gd" id="3_fdeuu"]
+[ext_resource type="PackedScene" uid="uid://umw6ebf32lkn" path="res://level1/stage4/redia.tscn" id="4_fdeuu"]
+[ext_resource type="PackedScene" uid="uid://bfso5mklmmv8e" path="res://level1/stage4/cercaria.tscn" id="5_mo3n3"]
+
+[sub_resource type="Curve2D" id="Curve2D_jmcrw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 1153, 2, 0, 0, 0, 0, 1148, 647, 0, 0, 0, 0, 2, 650, 0, 0, 0, 0, 3, 2)
+}
+point_count = 5
+
+[node name="Node" type="Node2D" unique_id=80986019]
+script = ExtResource("1_0vwka")
+
+[node name="Player" parent="." unique_id=898340681 instance=ExtResource("2_ryxec")]
+position = Vector2(550, 300)
+script = ExtResource("3_fdeuu")
+
+[node name="Player2" parent="." unique_id=421630240 instance=ExtResource("4_fdeuu")]
+process_mode = 4
+position = Vector2(0, -500)
+script = ExtResource("3_fdeuu")
+
+[node name="Player3" parent="." unique_id=533715449 instance=ExtResource("5_mo3n3")]
+process_mode = 4
+position = Vector2(0, -500)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2097430652]
+curve = SubResource("Curve2D_jmcrw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=436812741]
+position = Vector2(3, 2)
+
+[node name="CellTimer" type="Timer" parent="." unique_id=1798218118]
+wait_time = 0.5
+autostart = true
+
+[node name="Cells" type="Node" parent="." unique_id=1140283951]
+
+[node name="StageTimer" type="Timer" parent="." unique_id=154548479]
+wait_time = 20.0
+autostart = true
+
+[connection signal="timeout" from="CellTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StageTimer" to="." method="_on_stage_timer_timeout"]

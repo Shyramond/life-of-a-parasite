@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bqxti4hutgu5"]
+
+[node name="ColorRect" type="ColorRect" unique_id=1500795424]
+offset_right = 374.0
+offset_bottom = 201.0
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Label" type="Label" parent="." unique_id=248499580]
+layout_mode = 0
+offset_right = 374.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1

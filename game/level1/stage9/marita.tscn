@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ds4cu8we56601"]
+
+[ext_resource type="Script" uid="uid://dlwdngar14e1c" path="res://level1/stage9/marita.gd" id="1_6qrh7"]
+
+[sub_resource type="Curve" id="Curve_w73q4"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0.67415714), 0.0, 11.668109, 0, 0, Vector2(0.51000005, 2.52809), 0.0, 0.0, 0, 0, Vector2(1, 0.6179776), -12.306057, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qrh7"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrcfr"]
+bg_color = Color(1, 0.8352941, 0, 1)
+
+[node name="Line2D" type="Line2D" unique_id=222339040]
+points = PackedVector2Array(0, 0, 5, 0, 10, 0, 15, 0, 20, 0, 25, 0, 30, 0, 35, 0, 40, 0, 45, 0, 50, 0, 55, 0, 60, 0, 65, 0, 70, 0, 75, 0, 80, 0)
+width_curve = SubResource("Curve_w73q4")
+default_color = Color(0.9192531, 0.50621194, 0.3012209, 1)
+script = ExtResource("1_6qrh7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=209796978]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=784598166]
+
+[node name="Health" type="ProgressBar" parent="Node2D" unique_id=630796334]
+offset_left = -36.0
+offset_top = -66.0
+offset_right = 36.0
+offset_bottom = -39.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_6qrh7")
+value = 100.0
+
+[node name="Energy" type="ProgressBar" parent="Node2D" unique_id=1076522500]
+offset_left = -36.0
+offset_top = -95.0
+offset_right = 36.0
+offset_bottom = -68.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_hrcfr")
+value = 100.0
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1077661882]
+offset_left = -47.0
+offset_top = 31.0
+offset_right = 47.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 24
+text = "Марита"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

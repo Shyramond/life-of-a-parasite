@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://l87bpyxpfwjn"]
+
+[ext_resource type="Script" uid="uid://dl0dmhf3enpv8" path="res://level1/stage7/main.gd" id="1_g3av3"]
+
+[node name="Node" type="Node" unique_id=512824461]
+script = ExtResource("1_g3av3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=284283283]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=493902473]
+offset_left = 328.0
+offset_top = 75.0
+offset_right = 802.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 24
+text = "А: Я поймал рыбу, как ее приготовить?
+В: ..."
+
+[node name="Button" type="Button" parent="." unique_id=1367206504]
+offset_left = 1.0
+offset_top = 301.0
+offset_right = 560.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="Button2" type="Button" parent="." unique_id=616682491]
+offset_left = 593.0
+offset_top = 301.0
+offset_right = 1153.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2

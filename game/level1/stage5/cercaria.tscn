@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cev23en2c6alf"]
+
+[ext_resource type="Script" uid="uid://dhkpdgemnp0yj" path="res://level1/stage5/cercaria.gd" id="1_3f3nn"]
+
+[sub_resource type="Curve" id="Curve_v8a4a"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0.3932581), 0.0, 14.382026, 0, 0, Vector2(0.19, 1.5168538), 0.0, 0.0, 0, 0, Vector2(0.38500005, 1.2921348), -5.4477367, -5.4477367, 0, 0, Vector2(0.55, 0.5617976), 0.0, 0.0, 0, 0, Vector2(1, 0.33707857), -1.3758312, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3f3nn"]
+radius = 6.666666
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0tr0u"]
+radius = 2.6666667
+height = 32.0
+
+[node name="Line2D" type="Line2D" unique_id=533715449]
+scale = Vector2(1.5, 1.5)
+points = PackedVector2Array(-30, 0, -25, 0, -20, 0, -15, 0, -10, 0, -5, 0, 0, 0, 5, 0, 10, 0, 15, 0, 20, 0, 25, 0, 30, 0)
+width_curve = SubResource("Curve_v8a4a")
+default_color = Color(0.8907968, 0.51814604, 0.31559923, 1)
+joint_mode = 1
+script = ExtResource("1_3f3nn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1378110398]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=920965889]
+position = Vector2(-15.333333, -1.7349086e-13)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_3f3nn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=839791212]
+position = Vector2(14, -1.8296477e-13)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0tr0u")
+
+[node name="Label" type="Label" parent="." unique_id=1232832230]
+offset_left = 36.666668
+offset_top = 60.0
+offset_right = 156.66667
+offset_bottom = 94.0
+rotation = -1.5707964
+theme_override_font_sizes/font_size = 24
+text = "Церкария"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dwuesm2vp676c"]
+
+[ext_resource type="Script" uid="uid://cqncsmhgkin4n" path="res://level1/stage1/of-egg.gd" id="1_ueb2x"]
+[ext_resource type="Script" uid="uid://c1djifru0e50j" path="res://level1/OPISTHORCHIS FELINEUS/spine.gd" id="2_rehr0"]
+[ext_resource type="Script" uid="uid://cutjbadpet0bb" path="res://level1/stage1/progress_bar.gd" id="3_n1x7h"]
+
+[sub_resource type="Curve" id="Curve_248dm"]
+_data = [Vector2(0, 0.010989), 0.0, 7.1917, 0, 0, Vector2(0.142105, 0.659341), 1.79792, 1.79792, 0, 0, Vector2(0.505263, 1), 0.0, 0.0, 0, 0, Vector2(0.926316, 0.505494), -2.58503, -2.58503, 0, 0, Vector2(1, 0.010989), -15.6594, 0.0, 0, 0]
+point_count = 5
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_mjidt"]
+_data = [Vector2(0, 0), 0.0, 2.68446, 0, 0, Vector2(0.0578947, 0.417582), 1.98352, 1.98352, 0, 0, Vector2(0.489474, 0.78022), 0.0, 0.0, 0, 0, Vector2(0.984211, 0.318681), -1.94872, -1.94872, 0, 0, Vector2(1, 0), -2.37263, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kl355"]
+radius = 38.0
+height = 112.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1x7h"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Of-egg" type="Node2D" unique_id=1693506226]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ueb2x")
+radius = 6
+
+[node name="spine" type="Line2D" parent="." unique_id=675372347]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 0.0
+script = ExtResource("2_rehr0")
+
+[node name="border" type="Line2D" parent="spine" unique_id=735906681]
+width = 95.0
+width_curve = SubResource("Curve_248dm")
+default_color = Color(0.494118, 0.32549, 0.0941176, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="fill" type="Line2D" parent="spine" unique_id=1813591112]
+width = 75.0
+width_curve = SubResource("Curve_248dm")
+default_color = Color(1, 0.854902, 0.647059, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="emb" type="Line2D" parent="spine" unique_id=1101527984]
+width = 62.0
+width_curve = SubResource("Curve_mjidt")
+default_color = Color(0.752941, 0.521569, 0.337255, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=962944462]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=191146763]
+shape = SubResource("CapsuleShape2D_kl355")
+
+[node name="Camera2D" type="Camera2D" parent="Area2D/CollisionShape2D" unique_id=1671542970]
+
+[node name="ProgressBar" type="ProgressBar" parent="Area2D" unique_id=462463306]
+offset_left = -58.0
+offset_top = -112.0
+offset_right = 58.0
+offset_bottom = -63.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/fill = SubResource("StyleBoxFlat_n1x7h")
+script = ExtResource("3_n1x7h")
+
+[node name="Label" type="Label" parent="Area2D" unique_id=2085895799]
+offset_left = -50.0
+offset_top = 68.0
+offset_right = 54.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 40
+text = "Яйцо"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cfe7os8756ew2"]
+
+[ext_resource type="Script" uid="uid://bq472e6wd4pj7" path="res://ui/accounts.gd" id="1_the0d"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=451322498]
+process_mode = 3
+script = ExtResource("1_the0d")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=154291183]
+offset_right = 1151.0
+offset_bottom = 649.0
+color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1660106605]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 176.0
+offset_right = 100.0
+offset_bottom = 235.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Никнейм"
+
+[node name="Button" type="Button" parent="." unique_id=390750771]
+custom_minimum_size = Vector2(200, 60)
+offset_left = 476.0
+offset_top = 248.0
+offset_right = 676.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 24
+text = "Найти"
+
+[node name="Back" type="Button" parent="." unique_id=884644075]
+offset_left = 496.0
+offset_top = 444.0
+offset_right = 658.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 24
+text = "Назад"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1408359324]
+
+[node name="Label" type="Label" parent="." unique_id=370307786]
+offset_left = 477.0
+offset_top = 317.0
+offset_right = 675.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

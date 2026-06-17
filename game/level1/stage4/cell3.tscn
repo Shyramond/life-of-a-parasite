@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cpj2v3whkifn5"]
+
+[ext_resource type="Script" uid="uid://dwkesslkfnrtd" path="res://level1/stage4/cell3.gd" id="1_wko6u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0pq8o"]
+radius = 25.0
+
+[node name="Area2D" type="Area2D" unique_id=1690184471]
+script = ExtResource("1_wko6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885502882]
+shape = SubResource("CircleShape2D_0pq8o")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1207359011]
+rect = Rect2(-25, -25, 50, 50)

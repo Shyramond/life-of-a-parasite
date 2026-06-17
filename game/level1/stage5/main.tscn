@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bwjsw5k06sw73"]
+
+[ext_resource type="Script" uid="uid://dsj4ow6kofvht" path="res://level1/stage5/main.gd" id="1_6urwv"]
+[ext_resource type="PackedScene" uid="uid://cev23en2c6alf" path="res://level1/stage5/cercaria.tscn" id="2_yr2eh"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_yr2eh"]
+points = PackedVector2Array(20, 600, 70, 600, 45, 640)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_c3b1u"]
+points = PackedVector2Array(20, 580, 70, 580, 45, 540)
+
+[node name="Node" type="Node" unique_id=2055910486]
+script = ExtResource("1_6urwv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2018603994]
+offset_left = -105.0
+offset_top = -36.0
+offset_right = 1237.0
+offset_bottom = 746.0
+mouse_filter = 2
+color = Color(0.45882353, 1, 1, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=842985623]
+color = Color(0, 0.67058825, 1, 1)
+polygon = PackedVector2Array(171, 50, 182, 285, 209, 514, 241, 648, 847, 648, 871, 516, 901, 283, 916, 50)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=167444837]
+color = Color(0.4576527, 0.2531643, 0, 1)
+polygon = PackedVector2Array(171, 50, 182, 286, 209, 514, 241, 648, 847, 648, 871, 517, 902, 280, 915, 50, 1206, 50, 1221, 707, -72, 716, -81, 50)
+
+[node name="Player" parent="." unique_id=533715449 instance=ExtResource("2_yr2eh")]
+position = Vector2(550, 610)
+rotation = 1.5707964
+scale = Vector2(0.8, 0.8)
+
+[node name="Down" type="TouchScreenButton" parent="." unique_id=967150846]
+shape = SubResource("ConvexPolygonShape2D_yr2eh")
+
+[node name="Polygon2D" type="Polygon2D" parent="Down" unique_id=36786085]
+polygon = PackedVector2Array(20, 600, 70, 600, 45, 640)
+
+[node name="Up" type="TouchScreenButton" parent="." unique_id=46103466]
+shape = SubResource("ConvexPolygonShape2D_c3b1u")
+
+[node name="Polygon2D" type="Polygon2D" parent="Up" unique_id=975772918]
+polygon = PackedVector2Array(20, 580, 70, 580, 45, 540)
+
+[connection signal="pressed" from="Down" to="Player" method="_on_down_pressed"]
+[connection signal="pressed" from="Up" to="Player" method="_on_up_pressed"]

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://7dhv08fxqvls"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=799537682]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1769694418]
+offset_right = 1154.0
+offset_bottom = 644.0
+color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=529545789]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -35.0
+offset_right = 150.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1169294502]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Тренировочный режим"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1102473795]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Экзаменационный режим"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=838575890]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Логин/Регистрация"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1839185911]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Аккаунты"
+
+[node name="Label" type="Label" parent="." unique_id=120582034]
+offset_left = 401.0
+offset_top = 138.0
+offset_right = 751.0
+offset_bottom = 165.0
+horizontal_alignment = 1
+vertical_alignment = 1

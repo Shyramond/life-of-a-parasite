@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bnt2gfvjqawfq"]
+
+[ext_resource type="Script" uid="uid://c0piaon7u5l0" path="res://level1/stage2/snails.gd" id="2_tf5oj"]
+[ext_resource type="PackedScene" uid="uid://cg4q26bact1xw" path="res://level1/stage2/of-egg.tscn" id="3_he73a"]
+
+[node name="Node" type="Node" unique_id=2089777196]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1956692343]
+offset_left = -8732.0
+offset_top = -6401.0
+offset_right = 9223.0
+offset_bottom = 6078.0
+mouse_filter = 2
+color = Color(0.53686285, 0.35642397, 0.1627689, 1)
+
+[node name="Player" parent="." unique_id=1693506226 instance=ExtResource("3_he73a")]
+scale = Vector2(0.2, 0.2)
+vel = 300
+
+[node name="Snails" type="Node" parent="." unique_id=908439447]
+script = ExtResource("2_tf5oj")

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dovmqot5px73a"]
+
+[ext_resource type="Script" uid="uid://xkhutm22djd6" path="res://ui/login.gd" id="1_nqbwq"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=46017019]
+process_mode = 3
+script = ExtResource("1_nqbwq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1537975668]
+offset_right = 1150.0
+offset_bottom = 651.0
+color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=84478033]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -20.0
+offset_right = 34.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Username" type="LineEdit" parent="VBoxContainer" unique_id=236426093]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Никнейм"
+max_length = 20
+
+[node name="Password" type="LineEdit" parent="VBoxContainer" unique_id=524224034]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Пароль"
+max_length = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=672496621]
+layout_mode = 2
+
+[node name="Register" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=601392730]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Регистрация"
+
+[node name="Login" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=142380089]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Логин"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1593753362]
+
+[node name="Label" type="Label" parent="." unique_id=1723338350]
+offset_left = 374.0
+offset_top = 170.0
+offset_right = 777.0
+offset_bottom = 243.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Register" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Login" to="." method="_on_login_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

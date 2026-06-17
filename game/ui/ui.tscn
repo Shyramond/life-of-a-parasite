@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bl2rvheqnt7sg"]
+
+[ext_resource type="Script" uid="uid://b3i5fosxo0igg" path="res://ui/ui.gd" id="1_ks8t7"]
+[ext_resource type="Script" uid="uid://crpo5ve0bbeu" path="res://ui/timer_label.gd" id="2_ks8t7"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ks8t7"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_wl5ax"]
+events = [SubResource("InputEventKey_ks8t7")]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=100251336]
+process_mode = 3
+script = ExtResource("1_ks8t7")
+
+[node name="Menu" type="Button" parent="." unique_id=2116780879]
+process_mode = 1
+offset_right = 70.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+shortcut = SubResource("Shortcut_wl5ax")
+text = "Меню"
+
+[node name="Timer" type="Timer" parent="." unique_id=322704414]
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+
+[node name="TimerLabel" type="Label" parent="Timer" unique_id=1135683506]
+offset_top = 40.0
+offset_right = 1.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+script = ExtResource("2_ks8t7")
+
+[node name="Deaths" type="Label" parent="." unique_id=1925206663]
+offset_top = 70.0
+offset_right = 1.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 20
+
+[node name="WrongAnswers" type="Label" parent="." unique_id=1760407566]
+offset_top = 100.0
+offset_right = 1.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 20
